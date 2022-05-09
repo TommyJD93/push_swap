@@ -1,0 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/09 16:13:16 by tterribi          #+#    #+#             */
+/*   Updated: 2022/05/09 16:39:48 by tterribi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+# include <stdbool.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <strings.h>
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <fcntl.h>
+# include "libft/libft.h"
+
+typedef struct s_stack
+{
+	int	*stack_a;
+	int	*stack_a;
+}	t_stack;
+#endif
