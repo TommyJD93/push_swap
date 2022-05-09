@@ -6,13 +6,13 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 19:18:22 by tterribi          #+#    #+#             */
-/*   Updated: 2022/01/19 19:18:23 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/05/09 17:28:07 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	get_word(const char *s, char c)
+size_t	get_word(const char *s, char c)
 {
 	size_t	ret;
 

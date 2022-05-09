@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:13:16 by tterribi          #+#    #+#             */
-/*   Updated: 2022/05/09 16:39:48 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/05/09 17:25:03 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@
 typedef struct s_stack
 {
 	int	*stack_a;
-	int	*stack_a;
+	int	*stack_b;
 }	t_stack;
+
+int		stack_len_calc(char **matrix);
+void	converter(char **input);
 #endif
