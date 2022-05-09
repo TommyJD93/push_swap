@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:13:02 by tterribi          #+#    #+#             */
-/*   Updated: 2022/05/09 17:24:41 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/05/09 18:47:17 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 int	main(int argc, char **argv)
 {
-	int i;
-	int j;
+	t_stack *stacks;
 
 	if (argc < 2)
 		return 1;
-	converter(argv);
+	converter(argv, stacks);
 }
