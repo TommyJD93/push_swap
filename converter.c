@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:52:55 by tterribi          #+#    #+#             */
-/*   Updated: 2022/05/11 11:48:46 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/05/11 16:03:57 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,11 +92,16 @@ void	converter(char **input, t_stack *stacks)
 	{
 		if (is_in_strings(' ', input[j]))
 		{
-			i = string_manager(stacks->stack_a, input[j]);
+			i += string_manager(stacks->stack_a, input[j]);
 		}
 		else
 		{
- 
+			while ((i < stacks->stack_len) && !is_in_strings(' ', input[j]))
+			{
+				stacks->stack_a[i] = ft_atoi(input[j]);
+				i++;
+				j++;
+			}
 		}
 		j++;
 	}
