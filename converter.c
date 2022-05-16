@@ -6,24 +6,24 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:52:55 by tterribi          #+#    #+#             */
-/*   Updated: 2022/05/11 17:10:21 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/05/16 12:52:49 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	allocation_helper(t_stack *stacks)
+void	allocation_helper(t_stack *stacks, int len)
 {
 	int i;
 
-	stacks->stack_a = (int *)malloc(sizeof(int *) * stacks->stack_len + 1);
+	stacks->stack_a = (int *)malloc(sizeof(int *) * len + 1);
 	if (!stacks->stack_a)
 	{
 		printf("allocation gone wrong");
 		return ;
 	}
 	i = -1;
-	while (i < stacks->stack_len)
+	while (i < len)
 		stacks->stack_a[i++] = 0;
 }
 
@@ -70,13 +70,13 @@ void	converter(char **input, t_stack *stacks)
 {
 	int	i;
 	int j;
-	
+
 	//int	*arr;
 
 	i = 0;
-	stacks->stack_len = stack_len_calc(input);
-	printf("stack len: %d\n", stacks->stack_len);
-	allocation_helper(stacks);
+	stacks->len_a = stack_len_calc(input);
+	printf("stack len: %d\n", stacks->len_a);
+	allocation_helper(stacks, stacks->len_a);
 	//stacks->stack_a = (int *)malloc(sizeof(int *) * stacks->stack_len + 1);
 	if (!stacks->stack_a)
 	{
@@ -89,7 +89,7 @@ void	converter(char **input, t_stack *stacks)
 		string_manager(stacks->stack_a, input[1]);
 	else
 	{
-		while (i < stacks->stack_len)
+		while (i < stacks->len_a)
 		{
 			stacks->stack_a[i] = ft_atoi(input[i + 1]);
 			i++;

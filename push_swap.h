@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:13:16 by tterribi          #+#    #+#             */
-/*   Updated: 2022/05/11 17:07:13 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/05/16 14:55:45 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,21 @@ typedef struct s_stack
 {
 	int	*stack_a;
 	int	*stack_b;
-	int	stack_len;
+	int	len_a;
+	int	len_b;
 }	t_stack;
 
+//converter
 int		stack_len_calc(char **matrix);
 void	converter(char **input, t_stack *stacks);
-void 	string_manager(int *arr, char *string);
+void	string_manager(int *arr, char *string);
+void	allocation_helper(t_stack *stacks, int len);
+
+//moves
+void	swap_a(t_stack *stacks);
+void	swap_b(t_stack *stacks);
+void	push_a(t_stack *stacks);
+void	push_b(t_stack *stacks);
+void	rotate_a(t_stack *stacks);
+void	rotate_b(t_stack *stacks);
 #endif
