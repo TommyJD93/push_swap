@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:13:16 by tterribi          #+#    #+#             */
-/*   Updated: 2022/05/16 14:55:45 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/05/16 18:29:54 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
+# include <limits.h>
 # include "libft/libft.h"
 
 typedef struct s_stack
@@ -43,4 +44,6 @@ void	push_a(t_stack *stacks);
 void	push_b(t_stack *stacks);
 void	rotate_a(t_stack *stacks);
 void	rotate_b(t_stack *stacks);
+void	reverse_rotate_a(t_stack *stacks);
+void	reverse_rotate_b(t_stack *stacks);
 #endif
