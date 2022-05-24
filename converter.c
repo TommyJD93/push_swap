@@ -6,26 +6,11 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:52:55 by tterribi          #+#    #+#             */
-/*   Updated: 2022/05/16 12:52:49 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/05/23 18:17:53 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	allocation_helper(t_stack *stacks, int len)
-{
-	int i;
-
-	stacks->stack_a = (int *)malloc(sizeof(int *) * len + 1);
-	if (!stacks->stack_a)
-	{
-		printf("allocation gone wrong");
-		return ;
-	}
-	i = -1;
-	while (i < len)
-		stacks->stack_a[i++] = 0;
-}
 
 int	stack_len_calc(char **matrix)
 {
@@ -76,7 +61,7 @@ void	converter(char **input, t_stack *stacks)
 	i = 0;
 	stacks->len_a = stack_len_calc(input);
 	printf("stack len: %d\n", stacks->len_a);
-	allocation_helper(stacks, stacks->len_a);
+	stacks->stack_a = allocation_helper(stacks->stack_a, stacks->len_a);
 	//stacks->stack_a = (int *)malloc(sizeof(int *) * stacks->stack_len + 1);
 	if (!stacks->stack_a)
 	{
