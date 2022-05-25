@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:13:16 by tterribi          #+#    #+#             */
-/*   Updated: 2022/05/23 18:15:31 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/05/25 13:22:24 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,12 @@ typedef struct s_stack
 int		stack_len_calc(char **matrix);
 void	converter(char **input, t_stack *stacks);
 void	string_manager(int *arr, char *string);
-int		*allocation_helper(int *arr, int len);
+void		*allocation_helper(int *arr, int len);
 
-//moves
+//algo
+int wrapper(t_stack *stacks);
+
+// moves
 void	swap_a(t_stack *stacks);
 void	swap_b(t_stack *stacks);
 void	push_a(t_stack *stacks);

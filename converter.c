@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   converter.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:52:55 by tterribi          #+#    #+#             */
-/*   Updated: 2022/05/23 18:17:53 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/05/25 13:22:37 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	converter(char **input, t_stack *stacks)
 	i = 0;
 	stacks->len_a = stack_len_calc(input);
 	printf("stack len: %d\n", stacks->len_a);
-	stacks->stack_a = allocation_helper(stacks->stack_a, stacks->len_a);
+	allocation_helper(stacks->stack_a, stacks->len_a);
 	//stacks->stack_a = (int *)malloc(sizeof(int *) * stacks->stack_len + 1);
 	if (!stacks->stack_a)
 	{
