@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/19 19:15:18 by tterribi          #+#    #+#             */
-/*   Updated: 2022/05/25 16:25:23 by tterribi         ###   ########.fr       */
+/*   Created: 2022/05/09 16:13:02 by tterribi          #+#    #+#             */
+/*   Updated: 2022/05/11 17:10:14 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+int	main(int argc, char **argv)
 {
-	//size_t	i;
-	void	*str;
+	t_stack	stacks;
+	int i = 0;
 
-	str = malloc(size * nmemb);
-	if (!str)
-		return (NULL);
-	//i = 0;
-	ft_bzero(str, size * nmemb);
-	return (str);
+	if (argc < 2)
+		return (1);
+	converter(argv, &stacks);
+	printf("----napoli----\n");
+	while (i < stacks.stack_len)
+	{
+		printf("%d\n", stacks.stack_a[i]);
+		i++;
+	}
 }

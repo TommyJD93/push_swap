@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:13:16 by tterribi          #+#    #+#             */
-/*   Updated: 2022/05/25 13:22:24 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/06/06 18:26:20 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include <fcntl.h>
 # include <limits.h>
 # include "libft/libft.h"
+# include "ft_printf/ft_printf.h"
 
 typedef struct s_stack
 {
@@ -42,10 +43,10 @@ typedef struct s_stack
 int		stack_len_calc(char **matrix);
 void	converter(char **input, t_stack *stacks);
 void	string_manager(int *arr, char *string);
-void		*allocation_helper(int *arr, int len);
+int	*allocation_helper(int len);
 
 //algo
-int wrapper(t_stack *stacks);
+int	wrapper(t_stack *stacks);
 
 // moves
 void	swap_a(t_stack *stacks);
