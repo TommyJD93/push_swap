@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:13:02 by tterribi          #+#    #+#             */
-/*   Updated: 2022/05/25 13:22:08 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/06/06 18:42:47 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,9 @@ int	main(int argc, char **argv)
 	while (stacks.stack_a[++i])
 		printf("%d\n", stacks.stack_a[i]);
 	wrapper(&stacks);
+	printf("----scampia----\n");
+	while (stacks.lis[++i])
+		printf("%d\n", stacks.lis[i]);
 	// printf("len: %d\n", stacks.len_a);
 	// while (i < stacks.len_a)
 	// {

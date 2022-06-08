@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 13:33:10 by tterribi          #+#    #+#             */
-/*   Updated: 2022/06/06 18:27:59 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/06/06 19:12:56 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 // 	//	allocation_helper(stacks->lis, stacks->len_a);
 // }
 
-int	fis(t_stack *stacks, int *max, int n)
+int	lis(t_stack *stacks, int *max, int n)
 {
 	int	out;
 	int	ending;
@@ -30,12 +30,35 @@ int	fis(t_stack *stacks, int *max, int n)
 	i = 1;
 	while (i < n)
 	{
-		out = fis(stacks, max, i);
+		out = lis(stacks, max, i);
 		if (stacks->stack_a[i - 1] < stacks->stack_a[n - 1]
 			&& out + 1 > ending)
+			ending = out + 1;
+		i++;
+	}
+	if (*max < ending)
+		*max = ending;
+	return (ending);
+}
+
+int fis(t_stack *stacks, int *max, int n, int porcamadonna)
+{
+	int out;
+	int ending;
+	int i;
+
+	ending = 1;
+	out = 1;
+	if (n == 1)
+		return (1);
+	i = 1;
+	while (i < n)
+	{
+		out = fis(stacks, max, i, porcamadonna + 1);
+		if (stacks->stack_a[i - 1] < stacks->stack_a[n - 1] && out + 1 > ending)
 		{
 			ending = out + 1;
-			stacks->lis[i + 1] += 1;
+			stacks->lis[i] += 1;
 		}
 		i++;
 	}
@@ -48,17 +71,27 @@ int	wrapper(t_stack *stacks)
 {
 	//int	len;
 	int	max;
+	int porcamadonna = 0;
 
 	int i = -1;
-	while (stacks->lis[++i])
-		printf("lis[%d]: %d", i, stacks->lis[i]);
 	max = 1;
-	//len = stacks->len_a;
-	fis(stacks, &max, stacks->len_a);
+	stacks->len_lis = lis(stacks, &max, stacks->len_a);
+	printf("len lis = %d\n", stacks->len_lis);
+	stacks->lis = allocation_helper(stacks->len_lis - 1);
+	write(1, "porcamadonna\n", 14);
+	// while (stacks->lis[++i])
+	// 	printf("lis[%d]: %d", i, stacks->lis[i]);
+	fis(stacks, &max, stacks->len_a, porcamadonna);
+	while (i < stacks->len_lis - 1)
+	{
+		++i;
+		printf("lis[%d]: %d\n", i, stacks->lis[i]);
+	}
 	i = -1;
 	write(1,"diocane\n", 8);
+//	printf("lis[0]: %d\n", stacks->lis[1]);
 	while (stacks->lis[++i])
-		printf("lis[%d]: %d", i, stacks->lis[i]);
+		printf("lis[%d]: %d\n", i, stacks->lis[i]);
 	return max;
 }
 

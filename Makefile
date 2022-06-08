@@ -52,6 +52,7 @@ clean:
 
 fclean: clean
 	@make -C $(LIBFT_PATH) fclean
+	@make -C $(PRINTF_PATH) fclean
 	@rm -f $(NAME)
 	@echo $(R)Removed [$(NAME)]$(X)
 

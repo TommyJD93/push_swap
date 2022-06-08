@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:13:16 by tterribi          #+#    #+#             */
-/*   Updated: 2022/06/06 18:26:20 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/06/06 18:38:25 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_stack
 	int	*lis;
 	int	len_a;
 	int	len_b;
+	int	len_lis;
 }	t_stack;
 
 // typedef struct s_bucket {
@@ -43,7 +44,7 @@ typedef struct s_stack
 int		stack_len_calc(char **matrix);
 void	converter(char **input, t_stack *stacks);
 void	string_manager(int *arr, char *string);
-int	*allocation_helper(int len);
+int		*allocation_helper(int len);
 
 //algo
 int	wrapper(t_stack *stacks);
