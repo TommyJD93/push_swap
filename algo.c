@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 13:33:10 by tterribi          #+#    #+#             */
-/*   Updated: 2022/06/06 19:12:56 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/06/08 12:54:39 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// void	algo(t_stack *stacks)
-// {
-// 	//	allocation_helper(stacks->lis, stacks->len_a);
-// }
 
 int	lis(t_stack *stacks, int *max, int n)
 {
@@ -41,7 +36,7 @@ int	lis(t_stack *stacks, int *max, int n)
 	return (ending);
 }
 
-int fis(t_stack *stacks, int *max, int n, int porcamadonna)
+int	fis(t_stack *stacks, int *max, int n, int porcamadonna)
 {
 	int out;
 	int ending;
