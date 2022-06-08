@@ -6,13 +6,13 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 13:33:10 by tterribi          #+#    #+#             */
-/*   Updated: 2022/06/08 12:59:09 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/06/08 13:05:18 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	lis(int *arr, int *max, int n, int	*lis)
+int	lis(t_stack *stacks, int *max, int n)
 {
 	int	out;
 	int	ending;
@@ -25,20 +25,15 @@ int	lis(int *arr, int *max, int n, int	*lis)
 	i = 1;
 	while (i < n)
 	{
-		out = fis(arr, max, i, lis);
-		if (arr[i - 1] < arr[n - 1]
+		out = lis(stacks, max, i);
+		if (stacks->stack_a[i - 1] < stacks->stack_a[n - 1]
 			&& out + 1 > ending)
-		{
 			ending = out + 1;
-			lis[i + 1] += 1;
-		}
 		i++;
 	}
 	if (*max < ending)
 		*max = ending;
 	return (ending);
-}
-g);
 }
 
 int	fis(t_stack *stacks, int *max, int n, int porcamadonna)
@@ -63,7 +58,7 @@ int	fis(t_stack *stacks, int *max, int n, int porcamadonna)
 		i++;
 	}
 	if (*max < ending)
-		*max = ending;
+		*max = ending;√
 	return (ending);
 }
 
@@ -75,6 +70,7 @@ int	wrapper(t_stack *stacks)
 
 	int i = -1;
 	max = 1;
+	printf("len a = %d\n", stacks->len_a);
 	stacks->len_lis = lis(stacks, &max, stacks->len_a);
 	printf("len lis = %d\n", stacks->len_lis);
 	stacks->lis = allocation_helper(stacks->len_lis - 1);

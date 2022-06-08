@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   converter.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:52:55 by tterribi          #+#    #+#             */
-/*   Updated: 2022/06/06 18:26:04 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/06/08 13:02:03 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,7 @@ void	converter(char **input, t_stack *stacks)
 	printf("diocane: %d\n", stacks->stack_a[0]);
 	//j = 1;
 //	checker();
-	ft_printf("len a = %d", stacks->len_a);
-	write(1, "b\n", 2);
+	ft_printf("len a = %d\n", stacks->len_a);
 	if (is_in_strings(' ',input[1]))
 	{
 		string_manager(stacks->stack_a, input[1]);
@@ -89,7 +88,4 @@ void	converter(char **input, t_stack *stacks)
 			printf("%d\n", i);
 		}
 	}
-	write(1, "f\n", 2);
-	//stacks->stack_a[stacks->stack_len + 1] = '\0';
-	write(1, "z\n", 2);
 }
