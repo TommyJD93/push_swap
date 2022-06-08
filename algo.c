@@ -6,13 +6,13 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 13:33:10 by tterribi          #+#    #+#             */
-/*   Updated: 2022/06/08 12:54:39 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/06/08 12:59:09 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	lis(t_stack *stacks, int *max, int n)
+int	lis(int *arr, int *max, int n, int	*lis)
 {
 	int	out;
 	int	ending;
@@ -25,15 +25,20 @@ int	lis(t_stack *stacks, int *max, int n)
 	i = 1;
 	while (i < n)
 	{
-		out = lis(stacks, max, i);
-		if (stacks->stack_a[i - 1] < stacks->stack_a[n - 1]
+		out = fis(arr, max, i, lis);
+		if (arr[i - 1] < arr[n - 1]
 			&& out + 1 > ending)
+		{
 			ending = out + 1;
+			lis[i + 1] += 1;
+		}
 		i++;
 	}
 	if (*max < ending)
 		*max = ending;
 	return (ending);
+}
+g);
 }
 
 int	fis(t_stack *stacks, int *max, int n, int porcamadonna)
