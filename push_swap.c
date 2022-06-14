@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:13:02 by tterribi          #+#    #+#             */
-/*   Updated: 2022/06/08 16:56:34 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/06/09 09:15:05 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,7 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (1);
 	converter(argv, &stacks);
-	//---------test mosse---------//
-	// printf("----napoli----\n");
-	// while (stacks.stack_a[++i])
-	// 	printf("%d\n", stacks.stack_a[i]);
-	// swap_a(&stacks);
-	// printf("----caserta----\n");
-	// i = -1;
-	// while (stacks.stack_a[++i])
-	// 	printf("%d\n", stacks.stack_a[i]);
+
 
 	//---------test algo---------//
 	printf("----napoli----\n");
@@ -44,6 +36,10 @@ int	main(int argc, char **argv)
 	i = -1;
 	while (stacks.stack_a[++i])
 		printf("%d\n", stacks.lis[i]);
+
+
+
+
 	// printf("----scampia----\n");
 	// while (stacks.lis[++i])
 	// 	printf("%d\n", stacks.lis[i]);

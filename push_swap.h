@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:13:16 by tterribi          #+#    #+#             */
-/*   Updated: 2022/06/08 16:51:02 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/06/09 13:15:02 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int		*allocation_helper(int len);
 //algo
 int	wrapper(t_stack *stacks);
 int	lis(int *arr, int n, int *lis);
+
 // moves
 void	swap_a(t_stack *stacks);
 void	swap_b(t_stack *stacks);

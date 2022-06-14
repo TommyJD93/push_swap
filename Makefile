@@ -61,4 +61,7 @@ re: fclean all
 norm:
 	norminette libft ft_printf utils checker
 
+run:	all
+		@./push_swap 1 3 5 7 9 11 13 2 99
+
 .PHONY: all clean fclean re norm

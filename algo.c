@@ -18,27 +18,36 @@
 // 		{
 // 			/* code */
 // 		}
-
 // }
 
-int	_lis(int *arr, int n, int *max_ref, int *lis)
+/*
+i = (indice per scorrere l'array)
+res = (risultato del precedente lis)
+max_ref || max = ()
+max_ending_here = (risultato finale)
+*/
+
+int	_lis(int *arr, int arr_len, int *max_ref, int *lis)
 {
 	int	i;
 	int	res;
 	int	max_ending_here;
 
-	i = 1;
+	i = 0;
+	res = 1;
 	max_ending_here = 1;
-	if (n == 1)
+	if (arr_len == 1)
 		return 1;
-	while(i < n)
+	while(i < arr_len)
 	{
 		res = _lis(arr, i, max_ref, lis);
-		if (arr[i - 1] < arr[n - 1]
+		if (arr[i] < arr[arr_len]
 		&& res + 1 > max_ending_here)
 		{
 			max_ending_here = res + 1;
-
+			lis[i] = 1;
+			// printf("num: %d\n", arr[i - 1]);
+			// printf("num1: %d\n", arr[arr_len - 1]);
 		}
 		i++;
 	}
@@ -48,12 +57,12 @@ int	_lis(int *arr, int n, int *max_ref, int *lis)
 	return (max_ending_here);
 }
 
-int lis(int *arr, int n, int *lis)
+int lis(int *arr, int arr_len, int *lis)
 {
 	int max;
 
 	max = 1;
 
-	_lis(arr, n, &max, lis);
+	_lis(arr, arr_len, &max, lis);
 	return max;
 }
