@@ -27,42 +27,82 @@ max_ref || max = ()
 max_ending_here = (risultato finale)
 */
 
-int	_lis(int *arr, int arr_len, int *max_ref, int *lis)
+int	find_max(int *arr, int index)
 {
 	int	i;
-	int	res;
-	int	max_ending_here;
+	int	max;
 
-	i = 0;
-	res = 1;
-	max_ending_here = 1;
-	if (arr_len == 1)
-		return 1;
-	while(i < arr_len)
+	i = -1;
+	max = arr[index];
+	while (arr[++i])
 	{
-		res = _lis(arr, i, max_ref, lis);
-		if (arr[i] < arr[arr_len]
-		&& res + 1 > max_ending_here)
-		{
-			max_ending_here = res + 1;
-			lis[i] = 1;
-			// printf("num: %d\n", arr[i - 1]);
-			// printf("num1: %d\n", arr[arr_len - 1]);
-		}
-		i++;
+		if (arr[i] > max)
+			max = arr[i];
 	}
-	if (*max_ref < max_ending_here)
-	*max_ref = max_ending_here;
-
-	return (max_ending_here);
+	return(max);
 }
+
+int	_lis(int *arr, int len, int *lis)
+{
+	int	max;
+	int	i;
+	int	j;
+
+	i = len;
+	while (--i > -1)
+	{
+		j = i + 1;
+		while (j < len)
+		{
+			if (arr[i] < arr[j])
+			{
+				max = find_max(lis, i);
+				if (max > lis[j])
+					lis[i] = max;
+				else
+					lis[i] = 1 + lis[j];
+			}
+			j++;
+		}
+	}
+	max = find_max(lis, i);
+	return(max);
+}
+
+// int	_lis(int *arr, int arr_len, int *max_ref, int *lis)
+// {
+// 	int	i;
+// 	int	res;
+// 	int	max_ending_here;
+
+// 	i = 0;
+// 	res = 1;
+// 	max_ending_here = 1;
+// 	if (arr_len == 1)
+// 		return 1;
+// 	while(i < arr_len)
+// 	{
+// 		res = _lis(arr, i, max_ref, lis);
+// 		if (arr[i - 1] < arr[arr_len - 1]
+// 			&& res + 1 > max_ending_here)
+// 		{
+// 			max_ending_here = res + 1;
+// 			lis[i] = 1;
+// 			// printf("num: %d\n", arr[i - 1]);
+// 			// printf("num1: %d\n", arr[arr_len - 1]);
+// 		}
+// 		i++;
+// 	}
+// 	if (*max_ref < max_ending_here)
+// 	*max_ref = max_ending_here;
+
+// 	return (max_ending_here);
+// }
 
 int lis(int *arr, int arr_len, int *lis)
 {
 	int max;
 
-	max = 1;
-
-	_lis(arr, arr_len, &max, lis);
+	max = _lis(arr, arr_len, lis);
 	return max;
 }
