@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 10:38:20 by tterribi          #+#    #+#             */
-/*   Updated: 2022/06/27 12:35:41 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/06/27 16:06:26 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,16 @@ int	find_maxx(int *arr, int len)
 void	solve_three(t_stack stacks)
 {
 	int	max;
-	int i;
+	//int i;
 
 	max = find_maxx(stacks.stack_a, stacks.len_a);
 	while (stacks.stack_a[0] != max)
 	{
+		write(1, "a\n", 2);
 		// printf("stack_a[0]: %d\n", stacks.stack_a[0]);
 		// printf("max: %d\n", max);
-		printf("---stack a---\n");
-		i = -1;
+		//printf("---stack a---\n");
+		//i = -1;
 		// while (stacks.stack_a[++i])
 		// 	printf("%d\n", stacks.stack_a[i]);
 		sleep(5);

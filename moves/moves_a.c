@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:56:08 by tterribi          #+#    #+#             */
-/*   Updated: 2022/06/27 12:38:39 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/06/27 16:07:53 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,22 +52,23 @@ void	rotate_a(t_stack *stacks)
 	i = -1;
 	while (++i < len)
 		printf("%d\n", stacks->stack_a[i]);
-	i = 0;
-	arr = malloc(sizeof(int) * len);
+	arr = malloc(sizeof(int) * len - 1);
 	if (!arr)
 		exit(0);
-	while (stacks->stack_a[len])
+	i = 0;
+	while (len)
 	{
-		arr[i] = stacks->stack_a[len];
+		arr[i] = stacks->stack_a[len - 1];
 		len--;
 		i++;
 	}
-	arr[i] = '\0';
+//	arr[i] = '\0';
 	i = -1;
 	printf("caga\n");
-	while (++i < len)
-		printf("%d\n",arr[i]);
-	free(stacks->stack_a);
+	while (++i < stacks->len_a)
+	{
+		printf("%d\n", arr[i]);
+	}
 	stacks->stack_a = arr;
 }
 
