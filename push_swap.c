@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:13:02 by tterribi          #+#    #+#             */
-/*   Updated: 2022/06/09 09:15:05 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/06/27 11:30:03 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main(int argc, char **argv)
 		printf("%d\n", stacks.stack_a[i]);
 
 	stacks.lis = allocation_helper(stacks.len_a);
-	len = lis(stacks.stack_a, stacks.len_a, stacks.lis);
+	len = lis(stacks);
 	printf("lis len: %d\n", len);
 
 	printf("----lis algo----\n");
@@ -37,9 +37,10 @@ int	main(int argc, char **argv)
 	while (stacks.stack_a[++i])
 		printf("%d\n", stacks.lis[i]);
 
-
-
-
+	printf("----solve_three----\n");
+	solve_three(stacks);
+	while (stacks.stack_a[++i])
+		printf("%d\n", stacks.stack_a[i]);
 	// printf("----scampia----\n");
 	// while (stacks.lis[++i])
 	// 	printf("%d\n", stacks.lis[i]);

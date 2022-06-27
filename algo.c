@@ -69,6 +69,29 @@ int	_lis(int *arr, int len, int *lis)
 	return(max);
 }
 
+void	flag_manager(t_stack stacks)
+{
+	int	max;
+	int	i;
+
+	max = stacks.lis[0];
+	printf("%d\n", max);
+	i = 0;
+	while (stacks.lis[i])
+	{
+		if (stacks.lis[i] <= max)
+		{
+			max--;
+			stacks.lis[i] = 1;
+		}
+		else
+		{
+			stacks.lis[i] = 0;
+		}
+		i++;
+	}
+}
+
 // int	_lis(int *arr, int arr_len, int *max_ref, int *lis)
 // {
 // 	int	i;
@@ -95,14 +118,14 @@ int	_lis(int *arr, int len, int *lis)
 // 	}
 // 	if (*max_ref < max_ending_here)
 // 	*max_ref = max_ending_here;
-
 // 	return (max_ending_here);
 // }
 
-int lis(int *arr, int arr_len, int *lis)
+int	lis(t_stack stacks)
 {
 	int max;
 
-	max = _lis(arr, arr_len, lis);
+	max = _lis(stacks.stack_a, stacks.len_a, stacks.lis);
+	flag_manager(stacks);
 	return max;
 }

@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:13:16 by tterribi          #+#    #+#             */
-/*   Updated: 2022/06/09 13:15:02 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/06/27 11:27:29 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int		*allocation_helper(int len);
 
 //algo
 int	wrapper(t_stack *stacks);
-int	lis(int *arr, int n, int *lis);
+int	lis(t_stack stacks);
 
 // moves
 void	swap_a(t_stack *stacks);
@@ -59,4 +59,5 @@ void	rotate_a(t_stack *stacks);
 void	rotate_b(t_stack *stacks);
 void	reverse_rotate_a(t_stack *stacks);
 void	reverse_rotate_b(t_stack *stacks);
+void	solve_three(t_stack stacks);
 #endif
