@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:13:16 by tterribi          #+#    #+#             */
-/*   Updated: 2022/06/27 11:27:29 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/06/27 16:51:44 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,10 @@ void	swap_a(t_stack *stacks);
 void	swap_b(t_stack *stacks);
 void	push_a(t_stack *stacks);
 void	push_b(t_stack *stacks);
-void	rotate_a(t_stack *stacks);
+int		*rotate_a(t_stack *stacks);
 void	rotate_b(t_stack *stacks);
 void	reverse_rotate_a(t_stack *stacks);
 void	reverse_rotate_b(t_stack *stacks);
-void	solve_three(t_stack stacks);
+
+void	solve_three(t_stack *stacks);
 #endif

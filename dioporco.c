@@ -5,13 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/27 10:38:20 by tterribi          #+#    #+#             */
-/*   Updated: 2022/06/27 16:06:26 by tterribi         ###   ########.fr       */
+/*   Created: 2022/06/27 16:38:58 by tterribi          #+#    #+#             */
+/*   Updated: 2022/06/27 16:52:39 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+//does the same thing as find_max, or at least i think so->->-> that's why I created a new one
 int	find_maxx(int *arr, int len)
 {
 	int	max;
@@ -28,29 +29,29 @@ int	find_maxx(int *arr, int len)
 	return (max);
 }
 
-void	solve_three(t_stack stacks)
+void	solve_three(t_stack *stacks)
 {
 	int	max;
-	//int i;
+	int i;
 
-	max = find_maxx(stacks.stack_a, stacks.len_a);
-	while (stacks.stack_a[0] != max)
+	max = find_maxx(stacks->stack_a, stacks->len_a);
+	while (stacks->stack_a[0] != max)
 	{
 		write(1, "a\n", 2);
-		// printf("stack_a[0]: %d\n", stacks.stack_a[0]);
+		// printf("stack_a[0]: %d\n", stacks->stack_a[0]);
 		// printf("max: %d\n", max);
-		//printf("---stack a---\n");
-		//i = -1;
-		// while (stacks.stack_a[++i])
-		// 	printf("%d\n", stacks.stack_a[i]);
+		printf("---stack a---\n");
+		i = -1;
+		while (stacks->stack_a[++i])
+			printf("%d\n", stacks->stack_a[i]);
 		sleep(5);
-		rotate_a(&stacks);
+		stacks->stack_a = rotate_a(stacks);
 	}
 	push_b(&stacks);
-	find_maxx(stacks.stack_a, stacks.len_a - 1);
-	if (stacks.stack_a[0] == max)
+	find_maxx(stacks->stack_a, stacks->len_a - 1);
+	if (stacks->stack_a[0] == max)
 		push_a(&stacks);
-	if (stacks.stack_a[1] == max)
+	if (stacks->stack_a[1] == max)
 	{
 		rotate_a(&stacks);
 		push_a(&stacks);
