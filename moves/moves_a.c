@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves_a.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:56:08 by tterribi          #+#    #+#             */
-/*   Updated: 2022/06/27 16:52:20 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/06/28 08:31:19 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,17 @@ void	reverse_rotate_a(t_stack *stacks)
 	arr[i] = '\0';
 	free(stacks->stack_a);
 	stacks->stack_a = arr;
+}
+
+int main(int argc, char **argv)
+{
+	t_stack stacks;
+	int i = -1;
+	int len;
+
+	if (argc < 2)
+		return (1);
+	converter(argv, &stacks);
+	while (stacks.stack_a[++i])
+		printf("%d\n", stacks.stack_a[i]);
 }
