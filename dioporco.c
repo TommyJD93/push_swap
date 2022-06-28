@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 16:38:58 by tterribi          #+#    #+#             */
-/*   Updated: 2022/06/27 16:52:39 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/06/28 17:35:44 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,30 +32,36 @@ int	find_maxx(int *arr, int len)
 void	solve_three(t_stack *stacks)
 {
 	int	max;
-	int i;
+	int i = 0;
 
 	max = find_maxx(stacks->stack_a, stacks->len_a);
 	while (stacks->stack_a[0] != max)
+		rotate_a(stacks);
+	printf("stack_a[0]: %d\n", stacks->stack_a[0]);
+	printf("stack_a[1]: %d\n", stacks->stack_a[1]);
+	printf("stack_a[2]: %d\n", stacks->stack_a[2]);
+
+	push_b(stacks);
+
+	printf("pushed_b\n");
+	printf("stack_a[0]: %d\n", stacks->stack_a[0]);
+	printf("stack_a[1]: %d\n", stacks->stack_a[1]);
+	printf("stack_a[2]: %d\n", stacks->stack_a[2]);
+
+	printf("auto\n");
+
+	while (i < stacks->len_a)
 	{
-		write(1, "a\n", 2);
-		// printf("stack_a[0]: %d\n", stacks->stack_a[0]);
-		// printf("max: %d\n", max);
-		printf("---stack a---\n");
-		i = -1;
-		while (stacks->stack_a[++i])
-			printf("%d\n", stacks->stack_a[i]);
-		sleep(5);
-		stacks->stack_a = rotate_a(stacks);
+		printf("stack_a[%d]: %d\n", i, stacks->stack_a[i]);
+		i++;
 	}
-	push_b(&stacks);
-	find_maxx(stacks->stack_a, stacks->len_a - 1);
-	if (stacks->stack_a[0] == max)
-		push_a(&stacks);
-	if (stacks->stack_a[1] == max)
-	{
-		rotate_a(&stacks);
-		push_a(&stacks);
-	}
+	write(1, "a\n", 2);
+	max = find_maxx(stacks->stack_a, stacks->len_a);
+	while (stacks->stack_a[0] != max)
+		rotate_a(stacks);
+	write(1, "b\n", 2);
+	push_a(stacks);
+	printf("---fine---\n");
 }
 
 // void	solve_five(t_stack stacks)

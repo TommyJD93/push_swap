@@ -75,7 +75,6 @@ void	flag_manager(t_stack stacks)
 	int	i;
 
 	max = stacks.lis[0];
-	printf("%d\n", max);
 	i = 0;
 	while (stacks.lis[i])
 	{

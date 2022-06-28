@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 12:55:56 by tterribi          #+#    #+#             */
-/*   Updated: 2022/05/16 18:16:26 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/06/28 17:33:16 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,24 +21,43 @@ void	swap_b(t_stack *stacks)
 	stacks->stack_b[0] = tmp;
 }
 
-void	push_b(t_stack *stacks)
+void	push_manager_b(t_stack *stacks, int *temp)
 {
-	int i;
-	int *arr;
+	int	i;
 
-	arr = malloc(sizeof(int) * (stacks->len_a + 2));
-	if (!arr)
-		exit(0);
-	arr[0] = stacks->stack_a[0];
-	i = 1;
-	while (stacks->stack_b[i])
+	i = 0;
+	while (i < stacks->len_b)
 	{
-		arr[i] = stacks->stack_b[i - 1];
+		stacks->stack_b[i + 1] = temp[i];
 		i++;
 	}
-	arr[i] = '\0';
-	free(stacks->stack_b);
-	stacks->stack_b = arr;
+	i = 0;
+	while (i < stacks->len_a)
+	{
+		stacks->stack_a[i] = stacks->stack_a[i + 1];
+		i++;
+	}
+}
+
+void	push_b(t_stack *stacks)
+{
+	int	*temp;
+	int	i;
+
+	i = 0;
+	if (!(stacks->stack_a))
+		exit(0);
+	temp = malloc(stacks->len_b * sizeof(int));
+	while (i < stacks->len_b)
+	{
+		temp[i] = stacks->stack_b[i];
+		i++;
+	}
+	stacks->stack_b[0] = stacks->stack_a[0];
+	stacks->len_b++;
+	push_manager_b(stacks, temp);
+	free(temp);
+	stacks->len_a--;
 }
 
 void	rotate_b(t_stack *stacks)

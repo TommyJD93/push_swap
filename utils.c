@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:35:47 by tterribi          #+#    #+#             */
-/*   Updated: 2022/06/14 16:29:15 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/06/28 12:09:06 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ int	*allocation_helper(int len)
 	while (i < len)
 		arr[i++] = 1;
 	arr[i] = '\0';
-	int j = -1;
-	while (arr[++j])
-		printf("%d\n", arr[j]);
+	// int j = -1;
+	// while (arr[++j])
+	// 	printf("%d\n", arr[j]);
 	return (arr);
 }

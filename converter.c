@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:52:55 by tterribi          #+#    #+#             */
-/*   Updated: 2022/06/09 10:39:01 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/06/28 12:08:34 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,11 +75,11 @@ void	converter(char **input, t_stack *stacks)
 	if (is_in_strings(' ',input[1]))
 	{
 		string_manager(stacks->stack_a, input[1]);
-		write(1, "a\n", 2);
+	//	write(1, "a\n", 2);
 	}
 	else
 	{
-		write(1, "c\n", 2);
+	//	write(1, "c\n", 2);
 		// ft_printf("len a = %d\n", stacks->len_a);
 		while (i < stacks->len_a)
 		{

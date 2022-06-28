@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves_a.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:56:08 by tterribi          #+#    #+#             */
-/*   Updated: 2022/06/28 08:31:19 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/06/28 17:36:09 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,76 +21,83 @@ void	swap_a(t_stack *stacks)
 	stacks->stack_a[0] = tmp;
 }
 
+void	push_manager_a(t_stack *stacks, int *temp)
+{
+	int	i;
+
+	i = 0;
+	while (i < stacks->len_a)
+	{
+		stacks->stack_a[i + 1] = temp[i];
+		i++;
+	}
+	i = 0;
+	while (i < stacks->len_b)
+	{
+		stacks->stack_b[i] = stacks->stack_b[i + 1];
+		i++;
+	}
+}
+
 void	push_a(t_stack *stacks)
 {
-	int i;
-	int *arr;
-
-	arr = malloc(sizeof(int) * (stacks->len_a + 2));
-	if (!arr)
-		exit(0);
-	arr[0] = stacks->stack_b[0];
-	i = 1;
-	while (stacks->stack_a[i])
-	{
-		arr[i] = stacks->stack_a[i - 1];
-		i++;
-	}
-	arr[i] = '\0';
-	free(stacks->stack_a);
-	stacks->stack_a = arr;
-}
-
-int	*rotate_a(t_stack *stacks)
-{
-	int	*arr;
+	int	*temp;
 	int	i;
-	int	len;
 
-	len = stacks->len_a;
-	arr = malloc(sizeof(int) * len - 1);
-	if (!arr)
-		exit(0);
 	i = 0;
-	while (len)
+	if (!(stacks->stack_b))
+		exit(0);
+	temp = malloc(stacks->len_a * sizeof(int));
+	while (i < stacks->len_a)
 	{
-		arr[i] = stacks->stack_a[len - 1];
-		len--;
+		temp[i] = stacks->stack_a[i];
 		i++;
 	}
-	return (arr);
+	stacks->stack_a[0] = stacks->stack_b[0];
+	stacks->len_a++;
+	push_manager_a(stacks, temp);
+	free(temp);
+	stacks->len_b--;
 }
 
-void	reverse_rotate_a(t_stack *stacks)
+void	rotate_a(t_stack *stacks)
 {
-	int	*arr;
+	// int	*arr;
 	int	i;
-	int	len;
+	int temp;
 
-	len = stacks->len_a;
+	temp = stacks->stack_a[0];
 	i = 0;
-	arr = malloc(sizeof(int) * len);
-	if (!arr)
-		exit(0);
-	while (i < len - 1)
+	while (i < stacks->len_a - 1)
 	{
-		arr[i] = stacks->stack_a[i + 1];
+		stacks->stack_a[i] = stacks->stack_a[i + 1];
 		i++;
 	}
-	arr[i] = '\0';
-	free(stacks->stack_a);
-	stacks->stack_a = arr;
+	stacks->stack_a[stacks->len_a - 1] = temp;
+	// printf("expected output\n");
+	// i = -1;
+	// while (++i < 3)
+	// 	printf("%d\n", arr[i]);
+	// return (arr);
 }
 
-int main(int argc, char **argv)
-{
-	t_stack stacks;
-	int i = -1;
-	int len;
+// void	reverse_rotate_a(t_stack *stacks)
+// {
+// 	int	*arr;
+// 	int	i;
+// 	int	len;
 
-	if (argc < 2)
-		return (1);
-	converter(argv, &stacks);
-	while (stacks.stack_a[++i])
-		printf("%d\n", stacks.stack_a[i]);
-}
+// 	len = stacks->len_a;
+// 	i = 0;
+// 	arr = malloc(sizeof(int) * len);
+// 	if (!arr)
+// 		exit(0);
+// 	while (i < len - 1)
+// 	{
+// 		arr[i] = stacks->stack_a[i + 1];
+// 		i++;
+// 	}
+// 	arr[i] = '\0';
+// 	free(stacks->stack_a);
+// 	stacks->stack_a = arr;
+// }

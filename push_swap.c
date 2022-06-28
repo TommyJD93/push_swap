@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:13:02 by tterribi          #+#    #+#             */
-/*   Updated: 2022/06/27 16:17:46 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/06/28 17:01:25 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,32 +22,14 @@ int	main(int argc, char **argv)
 		return (1);
 	converter(argv, &stacks);
 
-
-	//---------test algo---------//
-	// printf("----napoli----\n");
-	// while (stacks.stack_a[++i])
-	// 	printf("%d\n", stacks.stack_a[i]);
-
+	stacks.stack_b = allocation_helper(1);
 	stacks.lis = allocation_helper(stacks.len_a);
 	len = lis(stacks);
-	printf("lis len: %d\n", len);
-
-	// printf("----lis algo----\n");
-	// i = -1;
-	// while (stacks.stack_a[++i])
-	// 	printf("%d\n", stacks.lis[i]);
 
 	printf("----solve_three----\n");
-	solve_three(stacks);
-	while (stacks.stack_a[++i])
+	solve_three(&stacks);
+	i = -1;
+	while (++i < 3)
 		printf("%d\n", stacks.stack_a[i]);
-	// printf("----scampia----\n");
-	// while (stacks.lis[++i])
-	// 	printf("%d\n", stacks.lis[i]);
-	// printf("len: %d\n", stacks.len_a);
-	// while (i < stacks.len_a)
-	// {
-	// 	printf("%d\n", stacks.stack_a[i]);
-	// 	i++;
-	// }
+
 }
