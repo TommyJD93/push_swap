@@ -6,65 +6,64 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 16:38:58 by tterribi          #+#    #+#             */
-/*   Updated: 2022/06/28 17:35:44 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/07/05 13:15:25 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//does the same thing as find_max, or at least i think so->->-> that's why I created a new one
-int	find_maxx(int *arr, int len)
+int	find_min(int *arr, int len)
 {
-	int	max;
+	int	min;
 	int	i;
 
-	max = arr[0];
+	min = arr[0];
 	i = 0;
 	while (i < len)
 	{
-		if (arr[i] > max)
-			max = arr[i];
+		if (arr[i] < min)
+			min = arr[i];
 		i++;
 	}
-	return (max);
+	return (min);
 }
 
 void	solve_three(t_stack *stacks)
 {
-	int	max;
-	int i = 0;
+	int	min;
 
-	max = find_maxx(stacks->stack_a, stacks->len_a);
-	while (stacks->stack_a[0] != max)
+	min = find_min(stacks->stack_a, stacks->len_a);
+	while (stacks->stack_a[0] != min)
 		rotate_a(stacks);
-	printf("stack_a[0]: %d\n", stacks->stack_a[0]);
-	printf("stack_a[1]: %d\n", stacks->stack_a[1]);
-	printf("stack_a[2]: %d\n", stacks->stack_a[2]);
-
 	push_b(stacks);
-
-	printf("pushed_b\n");
-	printf("stack_a[0]: %d\n", stacks->stack_a[0]);
-	printf("stack_a[1]: %d\n", stacks->stack_a[1]);
-	printf("stack_a[2]: %d\n", stacks->stack_a[2]);
-
-	printf("auto\n");
-
-	while (i < stacks->len_a)
-	{
-		printf("stack_a[%d]: %d\n", i, stacks->stack_a[i]);
-		i++;
-	}
-	write(1, "a\n", 2);
-	max = find_maxx(stacks->stack_a, stacks->len_a);
-	while (stacks->stack_a[0] != max)
+	min = find_min(stacks->stack_a, stacks->len_a);
+	while (stacks->stack_a[0] != min)
 		rotate_a(stacks);
-	write(1, "b\n", 2);
 	push_a(stacks);
-	printf("---fine---\n");
 }
 
-// void	solve_five(t_stack stacks)
-// {
+void	solve_five(t_stack *stacks)
+{
+	int	min;
+	int	len;
+	int	i;
 
-// }
+	min = find_min(stacks->stack_a, stacks->len_a);
+	len = stacks->len_a;
+	i = 0;
+	while (stacks->len_a)
+	{
+		if (stacks->stack_a[0] == min)
+		{
+			push_b(stacks);
+			min = find_min(stacks->stack_a, stacks->len_a);
+		}
+		rotate_a(stacks);
+		i++;
+	}
+	while (stacks->len_a != len)
+	{
+		push_a(stacks);
+		reverse_rotate_b(stacks);
+	}
+}

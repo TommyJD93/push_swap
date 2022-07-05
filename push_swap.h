@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:13:16 by tterribi          #+#    #+#             */
-/*   Updated: 2022/06/28 12:30:36 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/07/05 13:10:48 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,5 @@ void	reverse_rotate_a(t_stack *stacks);
 void	reverse_rotate_b(t_stack *stacks);
 
 void	solve_three(t_stack *stacks);
+void	solve_five(t_stack *stacks);
 #endif

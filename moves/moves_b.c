@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 12:55:56 by tterribi          #+#    #+#             */
-/*   Updated: 2022/06/28 17:33:16 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/07/05 13:17:25 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	push_b(t_stack *stacks)
 	push_manager_b(stacks, temp);
 	free(temp);
 	stacks->len_a--;
+	ft_printf("pb\n");
 }
 
 void	rotate_b(t_stack *stacks)
@@ -101,4 +102,5 @@ void	reverse_rotate_b(t_stack *stacks)
 	arr[i] = '\0';
 	free(stacks->stack_b);
 	stacks->stack_b = arr;
+	ft_printf("rrb\n");
 }
