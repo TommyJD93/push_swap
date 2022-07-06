@@ -1,7 +1,8 @@
 {
 	"files.associations": {
 		"ft_printf.h": "c",
-		"libft.h": "c"
+		"libft.h": "c",
+		"stdbool.h": "c"
 	},
 	"C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools"
 }

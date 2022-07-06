@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 15:29:14 by tterribi          #+#    #+#             */
-/*   Updated: 2022/07/06 12:42:42 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/07/06 13:01:45 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,10 @@ void	input_checker(char **argv)
 
 void	duplicates_check(t_stack *stacks)
 {
-	int	*tmp;
-	int	i;
-	int	j;
+	int		*tmp;
+	int		i;
+	int		j;
+	bool	check;
 
 	tmp = allocation_helper(stacks->len_a);
 	i = -1;
@@ -71,8 +72,10 @@ void	duplicates_check(t_stack *stacks)
 		j = 0;
 		while (j < stacks->len_a)
 		{
-			if (stacks->stack_a[j] == )
+			if (stacks->stack_a[j] == tmp)
+				check = 1;
 		}
+		if (check == 0)
 	}
 
 }

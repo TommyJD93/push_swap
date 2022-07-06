@@ -6,13 +6,12 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:13:16 by tterribi          #+#    #+#             */
-/*   Updated: 2022/07/06 12:36:53 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/07/06 12:54:34 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# include <stdbool.h>
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
@@ -21,6 +20,7 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 # include <limits.h>
+# include <stdbool.h>
 # include "libft/libft.h"
 # include "ft_printf/ft_printf.h"
 
@@ -33,12 +33,6 @@ typedef struct s_stack
 	int	len_b;
 	int	len_lis;
 }	t_stack;
-
-// typedef struct s_bucket {
-
-// 	int	*bucket_size;
-
-// }	t_bucket;
 
 // converter
 int		stack_len_calc(char **matrix);
@@ -64,9 +58,11 @@ void	rotate_b(t_stack *stacks);
 void	reverse_rotate_a(t_stack *stacks);
 void	reverse_rotate_b(t_stack *stacks);
 
+// solve
 void	solve_three(t_stack *stacks);
 void	solve_five(t_stack *stacks);
 
+// moves but they work
 void	ft_swap(int *a, int *b);
 void	ft_sa(t_stack *a, int caga);
 void	ft_sb(t_stack *b, int caga);
