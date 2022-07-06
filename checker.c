@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 15:29:14 by tterribi          #+#    #+#             */
-/*   Updated: 2022/07/06 10:14:39 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/07/06 12:42:42 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,36 +55,24 @@ void	input_checker(char **argv)
 	}
 }
 
-// int	main(int argc, char **argv)
-// {
-// 	int	i;
-// 	int	*arr;
-// 	int	len;
+void	duplicates_check(t_stack *stacks)
+{
+	int	*tmp;
+	int	i;
+	int	j;
 
-// 	input_checker(argv);
+	tmp = allocation_helper(stacks->len_a);
+	i = -1;
+	while (++i < stacks->len_a)
+		tmp[i] = stacks->stack_a[i];
+	i = 0;
+	while (i < stacks->len_a)
+	{
+		j = 0;
+		while (j < stacks->len_a)
+		{
+			if (stacks->stack_a[j] == )
+		}
+	}
 
-// 	// i = 0;
-// 	// len = 6;
-// 	// arr = malloc(sizeof(int) * 6);
-// 	// while (i < 6)
-// 	// {
-// 	// 	arr[i] = i + 1;
-// 	// 	i++;
-// 	// }
-// 	// arr[3] = INT_MAX;
-// 	// arr[i] = '\0';
-// 	// printf("-------------\n");
-// 	// i = -1;
-// 	// while (arr[++i])
-// 	// 	printf("%d\n", arr[i]);
-// 	// i = 0;
-// 	// while (i < len - 1)
-// 	// {
-// 	// 	if (!(arr[i] < arr[i + 1]))
-// 	// 	{
-// 	// 		printf("sorting fallito :(");
-// 	// 		exit(0);
-// 	// 	}
-// 	// 	i++;
-// 	// }
-// }
+}

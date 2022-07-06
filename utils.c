@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:35:47 by tterribi          #+#    #+#             */
-/*   Updated: 2022/06/28 12:09:06 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/07/06 12:37:18 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,35 @@ int	*allocation_helper(int len)
 	// while (arr[++j])
 	// 	printf("%d\n", arr[j]);
 	return (arr);
+}
+
+int	find_min(int *arr, int len)
+{
+	int	min;
+	int	i;
+
+	min = arr[0];
+	i = 0;
+	while (i < len)
+	{
+		if (arr[i] < min)
+			min = arr[i];
+		i++;
+	}
+	return (min);
+}
+
+int	find_max(int *arr, int index)
+{
+	int	i;
+	int	max;
+
+	i = -1;
+	max = arr[index];
+	while (arr[++i])
+	{
+		if (arr[i] > max)
+			max = arr[i];
+	}
+	return(max);
 }

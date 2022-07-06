@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:13:02 by tterribi          #+#    #+#             */
-/*   Updated: 2022/07/06 12:31:26 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/07/06 12:36:08 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	main(int argc, char **argv)
 		solve_three(&stacks);
 	else if (stacks.len_a == 5)
 		solve_five(&stacks);
+	
 	// len = lis(stacks);
 	printf("----result----\n");
 	i = -1;

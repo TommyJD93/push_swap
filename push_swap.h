@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:13:16 by tterribi          #+#    #+#             */
-/*   Updated: 2022/07/06 12:18:10 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/07/06 12:36:53 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +40,18 @@ typedef struct s_stack
 
 // }	t_bucket;
 
-//converter
+// converter
 int		stack_len_calc(char **matrix);
 void	converter(char **input, t_stack *stacks);
 void	string_manager(int *arr, char *string);
 int		*allocation_helper(int len);
 
-//algo
+// algo
 int	wrapper(t_stack *stacks);
 int	lis(t_stack stacks);
+
+// utils
+int	find_min(int *arr, int len);
 int	find_max(int *arr, int index);
 
 // moves
