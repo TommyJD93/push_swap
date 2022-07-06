@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:13:16 by tterribi          #+#    #+#             */
-/*   Updated: 2022/07/06 12:54:34 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/07/06 15:59:05 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,10 @@ int	lis(t_stack stacks);
 int	find_min(int *arr, int len);
 int	find_max(int *arr, int index);
 
+// checkers
+void	input_checker(char **argv);
+void	duplicates_check(t_stack *stacks);
+
 // moves
 void	swap_a(t_stack *stacks);
 void	swap_b(t_stack *stacks);
@@ -62,7 +66,7 @@ void	reverse_rotate_b(t_stack *stacks);
 void	solve_three(t_stack *stacks);
 void	solve_five(t_stack *stacks);
 
-// moves but they work
+// moves but they actually work
 void	ft_swap(int *a, int *b);
 void	ft_sa(t_stack *a, int caga);
 void	ft_sb(t_stack *b, int caga);

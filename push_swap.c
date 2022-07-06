@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:13:02 by tterribi          #+#    #+#             */
-/*   Updated: 2022/07/06 12:36:08 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/07/06 15:51:30 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,15 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		return (1);
+	input_checker(argv);
 	converter(argv, &stacks);
+	duplicates_check(&stacks);
 	stacks.stack_b = allocation_helper(1);
 	stacks.lis = allocation_helper(stacks.len_a);
 	if (stacks.len_a == 3)
 		solve_three(&stacks);
 	else if (stacks.len_a == 5)
 		solve_five(&stacks);
-	
 	// len = lis(stacks);
 	printf("----result----\n");
 	i = -1;

@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 16:38:58 by tterribi          #+#    #+#             */
-/*   Updated: 2022/07/06 12:37:35 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/07/06 16:08:02 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,9 @@ void	solve_five(t_stack *stacks)
 		ft_rb(stacks, 1);
 	ft_pa(stacks, 1);
 	ft_pa(stacks, 1);
+}
+
+void	solve(t_stack *stacks)
+{
+	
 }

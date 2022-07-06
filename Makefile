@@ -20,7 +20,8 @@ X = "\033[0m"
 UP = "\033[A"
 CUT = "\033[K"
 
-CFILES = push_swap.c converter.c moves/moves_a.c moves/moves_b.c moves/rrotate.c utils.c algo.c dioporco.c \
+CFILES = push_swap.c converter.c moves/moves_a.c moves/moves_b.c \
+			moves/rrotate.c utils.c algo.c dioporco.c checker.c \
 
 OBJECTS = $(CFILES:.c=.o)
 

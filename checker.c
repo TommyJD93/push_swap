@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 15:29:14 by tterribi          #+#    #+#             */
-/*   Updated: 2022/07/06 13:01:45 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/07/06 15:58:37 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	input_checker(char **argv)
 			}
 			if ((argv[i][j] < 48) || (argv[i][j] > 57))
 			{
-				printf("input invalido :(");
+				printf("ERROR: invalid\n");
 				exit(0);
 			}
 			j++;
@@ -55,27 +55,40 @@ void	input_checker(char **argv)
 	}
 }
 
-void	duplicates_check(t_stack *stacks)
+int	*dup_check_helper(t_stack *stacks)
 {
-	int		*tmp;
-	int		i;
-	int		j;
-	bool	check;
+	int *tmp;
+	int	i;
 
 	tmp = allocation_helper(stacks->len_a);
 	i = -1;
 	while (++i < stacks->len_a)
 		tmp[i] = stacks->stack_a[i];
-	i = 0;
-	while (i < stacks->len_a)
-	{
-		j = 0;
-		while (j < stacks->len_a)
-		{
-			if (stacks->stack_a[j] == tmp)
-				check = 1;
-		}
-		if (check == 0)
-	}
+	return (tmp);
+}
 
+void	duplicates_check(t_stack *stacks)
+{
+	int		*tmp;
+	int		i;
+	int		j;
+	int		check;
+
+	tmp = dup_check_helper(stacks);
+	i = -1;
+	while (++i < stacks->len_a)
+	{
+		j = -1;
+		check = 0;
+		while (++j < stacks->len_a)
+		{
+			if (stacks->stack_a[j] == tmp[i])
+				check++;
+		}
+		if (check > 1)
+		{
+			printf("ERROR: duplicated numbers found\n");
+			exit(0);
+		}
+	}
 }
