@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:13:16 by tterribi          #+#    #+#             */
-/*   Updated: 2022/07/05 13:10:48 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/07/06 12:18:10 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int		*allocation_helper(int len);
 //algo
 int	wrapper(t_stack *stacks);
 int	lis(t_stack stacks);
+int	find_max(int *arr, int index);
 
 // moves
 void	swap_a(t_stack *stacks);
@@ -62,4 +63,18 @@ void	reverse_rotate_b(t_stack *stacks);
 
 void	solve_three(t_stack *stacks);
 void	solve_five(t_stack *stacks);
+
+void	ft_swap(int *a, int *b);
+void	ft_sa(t_stack *a, int caga);
+void	ft_sb(t_stack *b, int caga);
+void	ft_ss(t_stack *a, int caga);
+void	ft_pa(t_stack *a, int caga);
+void	ft_pb(t_stack *a, int caga);
+void	ft_ra(t_stack *a, int caga);
+void	ft_rb(t_stack *b, int caga);
+void	ft_rr(t_stack *a, int caga);
+void	ft_rra(t_stack *a, int caga);
+void	ft_rrb(t_stack *b, int caga);
+void	ft_rrr(t_stack *a, int caga);
+
 #endif

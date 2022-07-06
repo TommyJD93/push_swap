@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 12:55:56 by tterribi          #+#    #+#             */
-/*   Updated: 2022/07/05 13:17:25 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/07/05 14:21:38 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,49 +58,36 @@ void	push_b(t_stack *stacks)
 	push_manager_b(stacks, temp);
 	free(temp);
 	stacks->len_a--;
-	ft_printf("pb\n");
+	// ft_printf("pb\n");
 }
 
 void	rotate_b(t_stack *stacks)
 {
-	int	*arr;
 	int	i;
-	int	len;
+	int temp;
 
-	len = stacks->len_b;
+	temp = stacks->stack_b[0];
 	i = 0;
-	arr = malloc(sizeof(int) * len);
-	if (!arr)
-		exit(0);
-	while (stacks->stack_b[len])
+	while (i < stacks->len_b - 1)
 	{
-		arr[0] = stacks->stack_b[len - 1];
-		len--;
+		stacks->stack_b[i] = stacks->stack_b[i + 1];
 		i++;
 	}
-	arr[i] = '\0';
-	free(stacks->stack_b);
-	stacks->stack_b = arr;
+	stacks->stack_b[stacks->len_a - 1] = temp;
+	// write(1, "rb\n", 3);
 }
 
 void	reverse_rotate_b(t_stack *stacks)
 {
-	int	*arr;
+	int	tmp;
 	int	i;
-	int	len;
 
-	len = stacks->len_b;
-	i = 0;
-	arr = malloc(sizeof(int) * len);
-	if (!arr)
-		exit(0);
-	while (i < len - 1)
+	i = stacks->len_b - 1;
+	tmp = stacks->stack_b[stacks->len_b - 1];
+	while (i > 0)
 	{
-		arr[i] = stacks->stack_b[i + 1];
-		i++;
+		stacks->stack_b[i] = stacks->stack_b[i - 1];
+		i--;
 	}
-	arr[i] = '\0';
-	free(stacks->stack_b);
-	stacks->stack_b = arr;
-	ft_printf("rrb\n");
+	stacks->stack_b[0] = tmp;
 }

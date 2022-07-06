@@ -20,7 +20,7 @@ X = "\033[0m"
 UP = "\033[A"
 CUT = "\033[K"
 
-CFILES = push_swap.c converter.c moves/moves_a.c moves/moves_b.c utils.c algo.c dioporco.c \
+CFILES = push_swap.c converter.c moves/moves_a.c moves/moves_b.c moves/rrotate.c utils.c algo.c dioporco.c \
 
 OBJECTS = $(CFILES:.c=.o)
 
@@ -62,6 +62,6 @@ norm:
 	norminette libft ft_printf utils checker
 
 run:	all
-		@./push_swap 3 5 1 2 4
+		@./push_swap 3 5 4 1 2
 
 .PHONY: all clean fclean re norm

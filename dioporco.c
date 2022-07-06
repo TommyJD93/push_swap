@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 16:38:58 by tterribi          #+#    #+#             */
-/*   Updated: 2022/07/05 13:15:25 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/07/06 12:17:15 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,26 +44,20 @@ void	solve_three(t_stack *stacks)
 
 void	solve_five(t_stack *stacks)
 {
-	int	min;
-	int	len;
-	int	i;
+	int	tmp;
 
-	min = find_min(stacks->stack_a, stacks->len_a);
-	len = stacks->len_a;
-	i = 0;
-	while (stacks->len_a)
-	{
-		if (stacks->stack_a[0] == min)
-		{
-			push_b(stacks);
-			min = find_min(stacks->stack_a, stacks->len_a);
-		}
-		rotate_a(stacks);
-		i++;
-	}
-	while (stacks->len_a != len)
-	{
-		push_a(stacks);
-		reverse_rotate_b(stacks);
-	}
+	tmp = find_min(stacks->stack_a, stacks->len_a);
+	while (stacks->stack_a[0] != tmp)
+		ft_ra(stacks, 1);
+	ft_pb(stacks, 1);
+	tmp = find_min(stacks->stack_a, stacks->len_a);
+	while (stacks->stack_a[0] != tmp)
+		ft_ra(stacks, 1);
+	ft_pb(stacks, 1);
+	solve_three(stacks);
+	tmp = find_max(stacks->stack_b, 0);
+	while (stacks->stack_b[0] != tmp)
+		ft_rb(stacks, 1);
+	ft_pa(stacks, 1);
+	ft_pa(stacks, 1);
 }

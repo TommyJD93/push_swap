@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 15:29:14 by tterribi          #+#    #+#             */
-/*   Updated: 2022/05/16 17:42:17 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/07/06 10:14:39 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	final_checker(t_stack stacks)
 	{
 		if (!(stacks.stack_a[i] < stacks.stack_a[i + 1]))
 		{
-			printf("sorting fallito :(");
+			printf("sorting failed :(");
 			exit(0);
 		}
 		i++;
