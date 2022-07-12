@@ -46,7 +46,7 @@ void	solve_five(t_stack *stacks)
 	ft_pa(stacks, 1);
 }
 
-void	solve(t_stack *stacks)
-{
-	
-}
+// void	solve(t_stack *stacks)
+// {
+
+// }

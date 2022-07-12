@@ -65,8 +65,13 @@ int	_lis(int *arr, int len, int *lis)
 int	lis(t_stack stacks)
 {
 	int max;
+	int i;
 
 	max = _lis(stacks.stack_a, stacks.len_a, stacks.lis);
+	printf("----lis----\n");
+	i = -1;
+	while (++i < stacks.len_lis)
+		printf("%d\n", stacks.lis[i]);
 	flag_manager(stacks);
 	return max;
 }
