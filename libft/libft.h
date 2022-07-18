@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 19:19:50 by tterribi          #+#    #+#             */
-/*   Updated: 2022/07/05 18:53:32 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/07/18 19:54:17 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 size_t	get_word(const char *s, char c);
 bool	is_in_strings(char c, char *str);
+
+int ft_mat_col(int *str);
+int ft_mat_row(int **matrix);
 #endif
