@@ -1,9 +1,41 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/tterribi/Desktop/push_swap'
 echo "\033[34m"
 make -C libft/ all
 echo "\033[34m"
 make -C ft_printf/ all
- 
+echo "\033[33m"Compiling [push_swap.c]..."\033[0m"
+gcc -Wall -Wextra -Werror -g -Imlx -c -o push_swap.o push_swap.c
+printf "\033[A""\033[K"
+echo "\033[33m"Compiling [converter.c]..."\033[0m"
+gcc -Wall -Wextra -Werror -g -Imlx -c -o converter.o converter.c
+printf "\033[A""\033[K"
+echo "\033[33m"Compiling [moves/moves_a.c]..."\033[0m"
+gcc -Wall -Wextra -Werror -g -Imlx -c -o moves/moves_a.o moves/moves_a.c
+printf "\033[A""\033[K"
+echo "\033[33m"Compiling [moves/moves_b.c]..."\033[0m"
+gcc -Wall -Wextra -Werror -g -Imlx -c -o moves/moves_b.o moves/moves_b.c
+printf "\033[A""\033[K"
+echo "\033[33m"Compiling [moves/rrotate.c]..."\033[0m"
+gcc -Wall -Wextra -Werror -g -Imlx -c -o moves/rrotate.o moves/rrotate.c
+printf "\033[A""\033[K"
+echo "\033[33m"Compiling [utils.c]..."\033[0m"
+gcc -Wall -Wextra -Werror -g -Imlx -c -o utils.o utils.c
+printf "\033[A""\033[K"
+echo "\033[33m"Compiling [algo.c]..."\033[0m"
+gcc -Wall -Wextra -Werror -g -Imlx -c -o algo.o algo.c
+printf "\033[A""\033[K"
+echo "\033[33m"Compiling [dioporco.c]..."\033[0m"
+gcc -Wall -Wextra -Werror -g -Imlx -c -o dioporco.o dioporco.c
+printf "\033[A""\033[K"
+echo "\033[33m"Compiling [checker.c]..."\033[0m"
+gcc -Wall -Wextra -Werror -g -Imlx -c -o checker.o checker.c
+printf "\033[A""\033[K"
+echo "\033[33m"Compiling [push_swap.c converter.c moves/moves_a.c moves/moves_b.c moves/rrotate.c utils.c algo.c dioporco.c checker.c ]..."\033[0m"
+echo "\033[32m"Finished [push_swap.c converter.c moves/moves_a.c moves/moves_b.c moves/rrotate.c utils.c algo.c dioporco.c checker.c ]"\033[0m"
+echo
+echo "\033[33m"Compiling [push_swap]..."\033[0m"
+gcc -Wall -Wextra -Werror -g libft/libft.a ft_printf/libftprintf.a push_swap.o converter.o moves/moves_a.o moves/moves_b.o moves/rrotate.o utils.o algo.o dioporco.o checker.o -o push_swap
+echo "\033[32m"Finished [push_swap]"\033[0m"
 make: Leaving directory `/Users/tterribi/Desktop/push_swap'
  
