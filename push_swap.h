@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:13:16 by tterribi          #+#    #+#             */
-/*   Updated: 2022/07/06 15:59:05 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/07/18 14:35:50 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int		*allocation_helper(int len);
 
 // algo
 int	wrapper(t_stack *stacks);
-int	lis(t_stack stacks);
+int	lis(t_stack *stacks);
 
 // utils
 int	find_min(int *arr, int len);
@@ -63,6 +63,8 @@ void	reverse_rotate_a(t_stack *stacks);
 void	reverse_rotate_b(t_stack *stacks);
 
 // solve
+
+void	solve_two(t_stack *stacks);
 void	solve_three(t_stack *stacks);
 void	solve_five(t_stack *stacks);
 

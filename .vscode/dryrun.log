@@ -1,7 +1,6 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/tterribi/Desktop/push_swap'
 echo "\033[34m"
- 
 make -C libft/ all
 echo "\033[34m"
 make -C ft_printf/ all

@@ -6,11 +6,20 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 16:38:58 by tterribi          #+#    #+#             */
-/*   Updated: 2022/07/06 16:08:02 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/07/18 12:48:25 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	solve_two(t_stack *stacks)
+{
+	int	max;
+
+	max = find_max(stacks->stack_a, 0);
+	if (!(stacks->stack_a[0] == max))
+		ft_ra(stacks, 1);
+}
 
 void	solve_three(t_stack *stacks)
 {
