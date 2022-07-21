@@ -4,6 +4,7 @@ echo "\033[34m"
 make -C libft/ all
 echo "\033[34m"
 make -C ft_printf/ all
+ 
 echo "\033[33m"Compiling [push_swap.c]..."\033[0m"
 gcc -Wall -Wextra -Werror -g -Imlx -c -o push_swap.o push_swap.c
 printf "\033[A""\033[K"
@@ -22,10 +23,10 @@ printf "\033[A""\033[K"
 echo "\033[33m"Compiling [utils.c]..."\033[0m"
 gcc -Wall -Wextra -Werror -g -Imlx -c -o utils.o utils.c
 printf "\033[A""\033[K"
- 
 echo "\033[33m"Compiling [algo.c]..."\033[0m"
 gcc -Wall -Wextra -Werror -g -Imlx -c -o algo.o algo.c
 printf "\033[A""\033[K"
+ 
 echo "\033[33m"Compiling [dioporco.c]..."\033[0m"
 gcc -Wall -Wextra -Werror -g -Imlx -c -o dioporco.o dioporco.c
 printf "\033[A""\033[K"

@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Thu Jul 21 11:52:38 2022
+# Make data base, printed on Thu Jul 21 14:02:14 2022
 
 # Variables
 
@@ -55,11 +55,11 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from `Makefile', line 23)
 CFILES = push_swap.c converter.c moves/moves_a.c moves/moves_b.c moves/rrotate.c utils.c algo.c dioporco.c checker.c 
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n0001l58000cs_/T/vscode-ipc-b0c4fd40-32fd-4609-a2ed-eef07af42084.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n0001l58000cs_/T/vscode-ipc-5f26c410-d99b-4ce4-ba53-a64ace855172.sock
 # environment
 VSCODE_CWD = /
 # environment
-Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.dbrPpUG3zx/Render
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.8SJa18pBqZ/Render
 # environment
 PATH = /Users/tterribi/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # environment
@@ -73,7 +73,7 @@ ELECTRON_RUN_AS_NODE = 1
 # makefile (from `Makefile', line 13)
 PRINTF_LIB = $(PRINTF_PATH)libftprintf.a
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.aJmOKcb3Ab/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.SzdFRM7yRw/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -145,15 +145,13 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000001.Electron
+XPC_SERVICE_NAME = com.microsoft.VSCode.7384
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
 # environment
 __CF_USER_TEXT_ENCODING = 0x332A:0x0:0x0
-# environment
-COMMAND_MODE = unix2003
 # default
 MAKEFILES := 
 # automatic
@@ -164,8 +162,6 @@ LIBFT_PATH = libft/
 PAGER = less
 # environment
 LC_ALL = C
-# environment
-SECURITYSESSIONID = 186a8
 # automatic
 ^F = $(notdir $^)
 # default
@@ -179,11 +175,11 @@ OBJECTS = $(CFILES:.c=.o)
 # environment
 LANG = C
 # environment
-VSCODE_PID = 2944
+VSCODE_PID = 1905
 # makefile (from `Makefile', line 9)
 LIBFT_LIB = $(LIBFT_PATH)libft.a
 # variable set hash-table stats:
-# Load=85/1024=8%, Rehash=0, Collisions=3/119=3%
+# Load=83/1024=8%, Rehash=0, Collisions=3/117=3%
 
 # Pattern-specific Variable Values
 
@@ -342,12 +338,12 @@ run: all
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 #  commands to execute (from `Makefile', line 66):
 	@./push_swap 50 3 10 7 40 80
 	
 
 clean:
+ 
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -402,6 +398,6 @@ converter.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Thu Jul 21 11:52:38 2022
+# Finished Make data base on Thu Jul 21 14:02:14 2022
 
  
