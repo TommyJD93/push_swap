@@ -34,12 +34,22 @@ void	flag_manager(t_stack stacks)
 	}
 }
 
-int	_lis(int *arr, int len, int *lis)
+int _lis(int *arr, int len, int *lis)
 {
 	int	max;
 	int	i;
 	int	j;
+	int	curr_max;
+	int	*slave;
+	// int	*master;
 
+	slave = (int *)malloc(sizeof(int *) * len);
+
+	if (!(slave))
+	{
+		printf("error while allocating master and slave\n");
+		exit(0);
+	}
 	i = len;
 	while (--i > -1)
 	{
@@ -48,30 +58,40 @@ int	_lis(int *arr, int len, int *lis)
 		{
 			if (arr[i] < arr[j])
 			{
-				max = find_max(lis, i);
-				if (max > lis[j])
-					lis[i] = max;
+				curr_max = find_max(slave, i);
+				if (curr_max > slave[j])
+				{
+					// lis[i] = max;
+					slave[i] = curr_max;
+				}
 				else
-					lis[i] = 1 + lis[j];
+				{
+					// lis[i] = 1 + lis[j];
+					slave[i] = 1 + slave[j];
+				}
 			}
 			j++;
 		}
+		if (curr_max > max)
+		{
+			max = curr_max;
+			ft_memcpy(lis, slave, len);
+		}
 	}
 	max = find_max(lis, i);
-	return(max);
+	return (max);
 }
-
 
 int	lis(t_stack stacks)
 {
-	int max;
-	int i;
+	int	max;
+	int	i;
 
 	max = _lis(stacks.stack_a, stacks.len_a, stacks.lis);
 	printf("----lis----\n");
 	i = -1;
 	while (++i < stacks.len_lis)
 		printf("%d\n", stacks.lis[i]);
-	flag_manager(stacks);
+	//flag_manager(stacks);
 	return max;
 }

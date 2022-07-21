@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:13:02 by tterribi          #+#    #+#             */
-/*   Updated: 2022/07/06 15:51:30 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/07/18 21:32:37 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	main(int argc, char **argv)
 	else if (stacks.len_a == 5)
 		solve_five(&stacks);
 	len = lis(stacks);
+	printf("len: %d\n", len);
 	printf("----flagged----\n");
 	i = -1;
 	while (++i < stacks.len_lis)
