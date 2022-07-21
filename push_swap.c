@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:13:02 by tterribi          #+#    #+#             */
-/*   Updated: 2022/07/18 21:32:37 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/07/21 12:09:27 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,19 @@ int	main(int argc, char **argv)
 	input_checker(argv);
 	converter(argv, &stacks);
 	duplicates_check(&stacks);
-	stacks.stack_b = allocation_helper(1);
-	stacks.lis = allocation_helper(stacks.len_a);
+	stacks.stack_b = allocation_helper(1, 0);
+	stacks.lis = allocation_helper(stacks.len_a, 1);
 	stacks.len_lis = stacks.len_a;
+	printf("len_lis: %d\n", stacks.len_lis);
+	printf("len_stack-a: %d\n", stacks.len_a);
 	if (stacks.len_a == 3)
 		solve_three(&stacks);
 	else if (stacks.len_a == 5)
 		solve_five(&stacks);
-	len = lis(stacks);
+	len = lis(&stacks);
 	printf("len: %d\n", len);
-	printf("----flagged----\n");
+	//flag_manager(&stacks);
+	printf("----flagged final----\n");
 	i = -1;
 	while (++i < stacks.len_lis)
 		printf("%d\n", stacks.lis[i]);

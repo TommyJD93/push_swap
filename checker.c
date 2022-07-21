@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 15:29:14 by tterribi          #+#    #+#             */
-/*   Updated: 2022/07/06 15:58:37 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/07/21 10:20:00 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	*dup_check_helper(t_stack *stacks)
 	int *tmp;
 	int	i;
 
-	tmp = allocation_helper(stacks->len_a);
+	tmp = allocation_helper(stacks->len_a, 0);
 	i = -1;
 	while (++i < stacks->len_a)
 		tmp[i] = stacks->stack_a[i];

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:35:47 by tterribi          #+#    #+#             */
-/*   Updated: 2022/07/18 21:25:51 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/07/21 10:25:48 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	*allocation_helper(int len)
+int	*allocation_helper(int len, int init_val)
 {
 	int	i;
 	int	*arr;
@@ -25,7 +25,7 @@ int	*allocation_helper(int len)
 	}
 	i = -1;
 	while (i < len)
-		arr[i++] = 1;
+		arr[i++] = init_val;
 	arr[i] = '\0';
 	// int j = -1;
 	// while (arr[++j])

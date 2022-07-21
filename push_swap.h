@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:13:16 by tterribi          #+#    #+#             */
-/*   Updated: 2022/07/06 15:59:05 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/07/21 12:02:35 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_stack
 	int	*stack_a;
 	int	*stack_b;
 	int	*lis;
+	int *slave;
 	int	len_a;
 	int	len_b;
 	int	len_lis;
@@ -38,11 +39,12 @@ typedef struct s_stack
 int		stack_len_calc(char **matrix);
 void	converter(char **input, t_stack *stacks);
 void	string_manager(int *arr, char *string);
-int		*allocation_helper(int len);
+int		*allocation_helper(int len, int init_val);
+void	flag_manager(t_stack *stacks);
 
 // algo
 int	wrapper(t_stack *stacks);
-int	lis(t_stack stacks);
+int	lis(t_stack *stacks);
 
 // utils
 int	find_min(int *arr, int len);
