@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 16:13:02 by tterribi          #+#    #+#             */
-/*   Updated: 2022/07/21 12:09:27 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/07/21 15:09:28 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	main(int argc, char **argv)
 	while (++i < stacks.len_lis)
 		printf("%d\n", stacks.lis[i]);
 
-	printf("----result----\n");
+	printf("----stack_a----\n");
 	i = -1;
 	while (++i < stacks.len_a)
 		printf("%d\n", stacks.stack_a[i]);

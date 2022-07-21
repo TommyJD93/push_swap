@@ -63,6 +63,6 @@ norm:
 	norminette libft ft_printf utils checker
 
 run:	all
-		@./push_swap 50 3 10 7 40 80
+		@./push_swap 50 3 10 7 40 80 27 1
 
 .PHONY: all clean fclean re norm

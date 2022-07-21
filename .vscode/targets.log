@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Thu Jul 21 14:02:14 2022
+# Make data base, printed on Thu Jul 21 15:17:49 2022
 
 # Variables
 
@@ -31,6 +31,7 @@ G = "\033[32m"
 # makefile
 CURDIR := /Users/tterribi/Desktop/push_swap
 # makefile
+ 
 SHELL = /bin/sh
 # makefile (from `Makefile', line 16)
 R = "\033[31m"
@@ -55,7 +56,7 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from `Makefile', line 23)
 CFILES = push_swap.c converter.c moves/moves_a.c moves/moves_b.c moves/rrotate.c utils.c algo.c dioporco.c checker.c 
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n0001l58000cs_/T/vscode-ipc-5f26c410-d99b-4ce4-ba53-a64ace855172.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n0001l58000cs_/T/vscode-ipc-b2fdec5f-2c0d-4ed4-bffe-ffae64bc8ace.sock
 # environment
 VSCODE_CWD = /
 # environment
@@ -175,7 +176,7 @@ OBJECTS = $(CFILES:.c=.o)
 # environment
 LANG = C
 # environment
-VSCODE_PID = 1905
+VSCODE_PID = 14725
 # makefile (from `Makefile', line 9)
 LIBFT_LIB = $(LIBFT_PATH)libft.a
 # variable set hash-table stats:
@@ -240,7 +241,7 @@ moves/rrotate.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-21 09:47:19
+#  Last modified 2022-07-21 15:16:50
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -339,11 +340,10 @@ run: all
 #  Modification time never checked.
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 66):
-	@./push_swap 50 3 10 7 40 80
+	@./push_swap 50 3 10 7 40 80 27 1
 	
 
 clean:
- 
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -360,6 +360,7 @@ push_swap.o:
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 push_swap: push_swap.o converter.o moves/moves_a.o moves/moves_b.o moves/rrotate.o utils.o algo.o dioporco.o checker.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -398,6 +399,6 @@ converter.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Thu Jul 21 14:02:14 2022
+# Finished Make data base on Thu Jul 21 15:17:49 2022
 
  

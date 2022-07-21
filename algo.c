@@ -41,18 +41,33 @@ int	*flag_flush(int *arr, int len, int flag)
 	return (arr);
 }
 
-void	flag_manager(t_stack *stacks)
+void	lis_manager(int *lis, int *slave, int len, int max)
 {
-	int	max;
-	int	i;
-	int	j;
+	int i;
+	int first;
+	int k;
 
-	i = stacks->len_lis;
+
+	first = 1;
+	i = len;
+	printf("max: %d\n", max);
 	while (--i > -1)
 	{
-		
+		if (slave[i] == max && first == 1)
+		{
+			lis[i] = 1;
+			first = 0;
+			continue ;
+		}
+		else if (first == 0)
+		{
+			lis[i] = 0;
+		}
 	}
-
+	printf("----cane----\n");
+	k = -1;
+	while (++k < len)
+		printf("%d\n", lis[k]);
 }
 
 int	_lis(int *arr, int len, int *lis, int *slave)
@@ -60,6 +75,7 @@ int	_lis(int *arr, int len, int *lis, int *slave)
 	int	max;
 	int	i;
 	int	j;
+	int k = 0;
 
 	i = len;
 	max = 0;
@@ -70,22 +86,20 @@ int	_lis(int *arr, int len, int *lis, int *slave)
 		{
 			if (arr[i] < arr[j])
 			{
-				max = find_max(lis, i);
-				if (max > lis[j])
-				{
-					lis[i] = max;
-					slave[j] = 0;
-				}
+				max = find_max(slave, i);
+				if (max > slave[j])
+					slave[i] = max;
 				else
-				{
-					// printf("1+lis[j]\n");
-					slave[j] = 1;
-					// printf("slave[%d]: %d\n", j, slave[j]);
-					lis[i] = 1 + lis[j];
-				}
+					slave[i] = 1 + slave[j];
 			}
 			j++;
 		}
+		printf("----dio----\n");
+		k = -1;
+		max = find_max(slave, i);
+		while (++k < len)
+			printf("%d\n", slave[k]);
+		lis_manager(lis, slave, len, max);
 	}
 	max = find_max(lis, i);
 	return (max);
@@ -146,14 +160,14 @@ int	lis(t_stack *stacks)
 	int	i;
 
 	printf("len_lis: %d\n", stacks->len_lis);
-	stacks->slave = allocation_helper(stacks->len_lis, 0);
+	stacks->slave = allocation_helper(stacks->len_lis, 1);
 
 	max = _lis(stacks->stack_a, stacks->len_a, stacks->lis, stacks->slave);
 	// printf("flagged[0]: %d\n", flagged[0]);
-	printf("----flagged----\n");
+	printf("----slave----\n");
 	i = -1;
 	while (++i < stacks->len_lis)
 		printf("%d\n", stacks->slave[i]);
-	flag_manager(stacks);
+	// flag_manager(stacks);
 	return (max);
 }
