@@ -12,6 +12,21 @@
 
 #include "../push_swap.h"
 
+void	move_flags(t_stack *stacks)
+{
+	int	i;
+
+	i = 0;
+	while (i < stacks->len_a)
+	{
+		if (stacks->stack_a[0] == 1)
+			ft_ra(stacks, 1);
+		else
+			ft_pb(stacks, 1);
+		i++;
+	}
+}
+
 void	solve_three(t_stack *stacks)
 {
 	int	min;
@@ -46,14 +61,20 @@ void	solve_five(t_stack *stacks)
 	ft_pa(stacks, 1);
 }
 
+void	algo_helper(t_stack *stacks)
+{
+	int	i;
+	int	j;
+
+	
+
+}
+
 void	solve(t_stack *stacks)
 {
 	lis_wrapper(stacks);
 	move_flags(stacks);
-	int i = -1;
-	while (++)
-	{
-		/* code */
-	}
-	
+	while (stacks->len_b != 0)
+		algo_helper(stacks);
+
 }

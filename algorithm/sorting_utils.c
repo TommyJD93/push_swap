@@ -12,17 +12,90 @@
 
 #include "../push_swap.h"
 
-void	move_flags(t_stack *stacks)
+int	find_pos_min(t_stack *stacks)
 {
 	int	i;
+	int	pos;
+	int	min;
 
-	i = 0;
-	while (i < stacks->len_a)
+	pos = 0;
+	i = -1;
+	min = stacks->stack_a[0];
+	while (++i < stacks->len_a)
 	{
-		if (stacks->stack_a[0] == 1)
-			ft_ra(stacks, 1);
-		else
-			ft_pb(stacks, 1);
-		i++;
+		if (stacks->stack_a[i] < min)
+		{
+			min = stacks->stack_a[i];
+			pos = i;
+		}
 	}
+	return (pos);
+}
+
+int	find_pos_max(t_stack *stacks)
+{
+	int	i;
+	int	pos;
+	int	max;
+
+	pos = 0;
+	i = -1;
+	max = stacks->stack_a[0];
+	while (++i < stacks->len_a)
+	{
+		if (stacks->stack_a[i] > max)
+		{
+			max = stacks->stack_a[i];
+			pos = i;
+		}
+	}
+	return (pos);
+}
+
+bool	b_gretaer(t_stack *stacks, int i)
+{
+	int	j;
+
+	j = -1;
+	while (++j < stacks->len_a)
+	{
+		if (stacks->stack_b[i] < stacks->stack_a[j])
+			return (false);
+	}
+	return (true);
+}
+
+bool	b_smaller(t_stack *stacks, int i)
+{
+	int	j;
+
+	j = -1;
+	while (++j < stacks->len_a)
+	{
+		if (stacks->stack_b[i] > stacks->stack_a[j])
+			return (false);
+	}
+	return (true);
+}
+
+int	moves_counter(t_stack *stacks, int i, int j)
+{
+	int	moves;
+
+	if (cases(stacks, i) == 0)
+	{
+		if (j > i)
+			moves = j;
+		else
+			moves = i;
+	}
+	else if (cases(stacks, i) == 1)
+		moves = (stacks->len_b - i) + j;
+	else if (cases(stacks, i) == 2)
+		moves = stacks->len_a - j + i - 1;
+	else if ((stacks->len_a - j) > (stacks->len_b - i))
+		moves = stacks->len_a - j;
+	else
+		moves = stacks->len_b - i;
+	return (moves);
 }

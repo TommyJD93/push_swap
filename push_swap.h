@@ -21,7 +21,6 @@
 # include <fcntl.h>
 # include <limits.h>
 # include <stdbool.h>
-# include "ft_printf/ft_printf.h"
 # include "libft/libft.h"
 
 typedef struct s_stack
@@ -53,6 +52,13 @@ void	solve_five(t_stack *stacks);
 
 //Algorithm utils
 void	move_flags(t_stack *stacks);
+bool	b_gretaer(t_stack *stacks, int i);
+bool	b_smaller(t_stack *stacks, int i);
+int		find_pos_max(t_stack *stacks);
+int		find_pos_min(t_stack *stacks);
+int		cases(t_stack *stacks, int i);
+int		moves_counter(t_stack *stacks, int i, int j);
+int		num_to_move(t_stack *stacks);
 
 //moves
 void	ft_sa(t_stack *stacks, int caga);
