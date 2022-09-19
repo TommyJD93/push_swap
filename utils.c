@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 16:54:12 by tterribi          #+#    #+#             */
-/*   Updated: 2022/09/16 17:14:27 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/09/19 08:28:03 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,34 @@ void	error(t_stack *stacks)
 	free(stacks->stack_b);
 	free(stacks->lis);
 	exit(0);
+}
+
+int	find_min(t_stack *stacks)
+{
+	int	min;
+	int	i;
+
+	i = -1;
+	min = stacks->stack_a[0];
+	while (++i < stacks->len_a)
+	{
+		if (stacks->stack_a[i] < min)
+			min = stacks->stack_a[i];
+	}
+	return (min);
+}
+
+int find_max(int *arr, int len)
+{
+	int max;
+	int i;
+
+	i = -1;
+	max = arr[0];
+	while (++i < len)
+	{
+		if (arr[i] > max)
+			max = arr[i];
+	}
+	return (max);
 }

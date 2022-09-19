@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting_utils2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 23:07:49 by marvin            #+#    #+#             */
-/*   Updated: 2022/09/18 23:07:49 by marvin           ###   ########.fr       */
+/*   Updated: 2022/09/19 08:16:06 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	num_to_move(t_stack *stacks)
 	max_moves = 99999;
 	while (++i < stacks->len_b)
 	{
-		j = stacks = find_next_elem(stacks, i);
+		j = find_next_elem(stacks, i);
 		moves = moves_counter(stacks, i, j);
 		if (moves < max_moves)
 		{
@@ -73,3 +73,18 @@ int	num_to_move(t_stack *stacks)
 	}
 	return (index);
 }
+
+void	order_manager(t_stack *stacks)
+{
+	int min;
+
+	min = find_min(stacks);
+	while (stacks->stack_a[0] != min)
+	{
+		if (find_pos_min(stacks) <=  (stacks->len_a / 2))
+			ft_ra(stacks, 1);
+		else
+			ft_rra(stacks, 1);
+	}
+}
+

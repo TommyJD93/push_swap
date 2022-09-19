@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 17:17:20 by tterribi          #+#    #+#             */
-/*   Updated: 2022/09/16 18:00:54 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/09/19 08:29:07 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	lis(t_stack *stacks)
 		}
 		i++;
 	}
-	max = find_max(stacks->lis, 0);
+	max = find_max(stacks->lis, stacks->len_lis);
 	return (max);
 }
 

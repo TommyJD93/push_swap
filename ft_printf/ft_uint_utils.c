@@ -1,26 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_uint_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/16 15:31:53 by tterribi          #+#    #+#             */
-/*   Updated: 2022/09/19 08:40:19 by tterribi         ###   ########.fr       */
+/*   Created: 2022/01/28 17:50:17 by tterribi          #+#    #+#             */
+/*   Updated: 2022/02/09 13:27:45 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-int	main(int argc, char **argv)
+int	ft_num_len(unsigned	int num)
 {
-	t_stack	stacks;
+	int	len;
 
-	input_checker_wrapper(argc, argv, &stacks);
-	if (stacks.len_a == 3)
-		solve_three(&stacks);
-	else if (stacks.len_a == 5)
-		solve_five(&stacks);
-	solve(&stacks);
-	final_checker(&stacks);
+	len = 0;
+	while (num != 0)
+	{
+		len++;
+		num = num / 10;
+	}
+	return (len);
+}
+
+char	*ft_uitoa(unsigned int n)
+{
+	char	*num;
+	int		len;
+
+	len = ft_num_len(n);
+	num = (char *)malloc(sizeof(char) * (len + 1));
+	if (!num)
+		return (0);
+	num[len] = '\0';
+	while (n != 0)
+	{
+		num[len - 1] = n % 10 + 48;
+		n = n / 10;
+		len--;
+	}
+	return (num);
 }

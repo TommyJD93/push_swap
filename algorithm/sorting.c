@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 17:08:51 by tterribi          #+#    #+#             */
-/*   Updated: 2022/09/16 18:24:44 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/09/19 08:43:01 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ void	solve_three(t_stack *stacks)
 {
 	int	min;
 
-	min = find_min(stacks->stack_a, stacks->len_a);
+	min = find_min(stacks);
 	while (stacks->stack_a[0] != min)
 		ft_ra(stacks, 1);
 	ft_pb(stacks, 1);
-	min = find_min(stacks->stack_a, stacks->len_a);
+	min = find_min(stacks);
 	while (stacks->stack_a[0] != min)
 		ft_ra(stacks, 1);
 	ft_pa(stacks, 1);
@@ -45,11 +45,11 @@ void	solve_five(t_stack *stacks)
 {
 	int	tmp;
 
-	tmp = find_min(stacks->stack_a, stacks->len_a);
+	tmp = find_min(stacks);
 	while (stacks->stack_a[0] != tmp)
 		ft_ra(stacks, 1);
 	ft_pb(stacks, 1);
-	tmp = find_min(stacks->stack_a, stacks->len_a);
+	tmp = find_min(stacks);
 	while (stacks->stack_a[0] != tmp)
 		ft_ra(stacks, 1);
 	ft_pb(stacks, 1);
@@ -66,8 +66,27 @@ void	algo_helper(t_stack *stacks)
 	int	i;
 	int	j;
 
-	
-
+	i = num_to_move(stacks);
+	j = find_next_elem(stacks, i);
+	if (cases(stacks, i) == 0)
+	{
+		if (i <= j)
+			case_zero_a(stacks, i, j);
+		else
+			case_zero_b(stacks, i, j);
+	}
+	else if (cases(stacks, i) == 3)
+	{
+		if ((stacks->len_b- i) < (stacks->len_a - j))
+			case_three_a(stacks, i, j);
+		else
+			case_three_b(stacks, i, j);
+	}
+	else if (cases(stacks, i) == 1)
+		case_one_a(stacks, i, j);
+	else
+		case_one_b(stacks, i, j);
+	ft_pa(stacks, 1);
 }
 
 void	solve(t_stack *stacks)
@@ -76,5 +95,5 @@ void	solve(t_stack *stacks)
 	move_flags(stacks);
 	while (stacks->len_b != 0)
 		algo_helper(stacks);
-
+	order_manager(stacks);
 }
