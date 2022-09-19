@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 18:02:43 by tterribi          #+#    #+#             */
-/*   Updated: 2022/09/16 18:21:54 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/09/19 17:09:11 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,16 +82,16 @@ int	moves_counter(t_stack *stacks, int i, int j)
 {
 	int	moves;
 
-	if (cases(stacks, i) == 0)
+	if (cases(stacks, i) == 1)
 	{
 		if (j > i)
 			moves = j;
 		else
 			moves = i;
 	}
-	else if (cases(stacks, i) == 1)
-		moves = (stacks->len_b - i) + j;
 	else if (cases(stacks, i) == 2)
+		moves = (stacks->len_b - i) + j;
+	else if (cases(stacks, i) == 3)
 		moves = stacks->len_a - j + i - 1;
 	else if ((stacks->len_a - j) > (stacks->len_b - i))
 		moves = stacks->len_a - j;

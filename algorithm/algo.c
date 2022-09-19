@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 17:17:20 by tterribi          #+#    #+#             */
-/*   Updated: 2022/09/19 08:29:07 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/09/19 16:41:13 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,6 @@ int	lis(t_stack *stacks)
 
 void	lis_wrapper(t_stack *stacks)
 {
-	int	max;
-
-	max = lis(stacks);
-	lis_flag(stacks, max);
+	stacks->max = lis(stacks);
+	lis_flag(stacks, stacks->max);
 }

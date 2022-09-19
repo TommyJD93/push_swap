@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 15:31:49 by tterribi          #+#    #+#             */
-/*   Updated: 2022/09/19 08:40:00 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/09/19 17:46:14 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_stack
 	int	len_a;
 	int	len_b;
 	int	len_lis;
+	int	max;
 }	t_stack;
 
 //checker
@@ -67,7 +68,7 @@ int		num_to_move(t_stack *stacks);
 void	order_manager(t_stack *stacks);
 
 // moves
-void ft_sa(t_stack *stacks, int caga);
+void	ft_sa(t_stack *stacks, int caga);
 void	ft_sb(t_stack *stacks, int caga);
 void	ft_pa(t_stack *stacks, int caga);
 void	ft_pb(t_stack *stacks, int caga);
@@ -84,4 +85,23 @@ void	case_one_b(t_stack *stacks, int i, int j);
 void	case_three_a(t_stack *stacks, int i, int j);
 void	case_three_b(t_stack *stacks, int i, int j);
 
+//new moves
+void	swap_a(t_stack *stack, int can_write);
+void	swap_b(t_stack *stack, int can_write);
+void	push_a(t_stack *stack, int can_write);
+void	push_b(t_stack *stack, int can_write);
+void	rotate_a(t_stack *stack, int can_write);
+void	rotate_b(t_stack *stack, int can_write);
+void	reverse_rotate_a(t_stack *stack, int can_write);
+void	reverse_rotate_b(t_stack *stack, int can_write);
+void	swap_ab(t_stack *stack, int can_write);
+void	rotate_ab(t_stack *stack, int can_write);
+void	reverse_rotate_ab(t_stack *stack, int can_write);
+
+void	ra_rrb(t_stack *stack, int i, int j);
+void	rb_rra(t_stack *stack, int i, int j);
+void	rab_ra(t_stack *stack, int i, int j);
+void	rab_rb(t_stack *stack, int i, int j);
+void	rrab_rra(t_stack *stack, int i, int j) ;
+void	rrab_rrb(t_stack *stack, int i, int j);
 #endif

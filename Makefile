@@ -20,7 +20,7 @@ X = "\033[0m"
 UP = "\033[A"
 CUT = "\033[K"
 
-CFILES = push_swap.c converter.c moves/moves_a.c moves/moves_b.c moves/cases_moves.c\
+CFILES = push_swap.c converter.c moves/push_swap_a.c moves/push_swap_ab.c moves/push_swap_b.c moves/push_swap_combo.c \
 		utils.c algorithm/algo.c algorithm/sorting.c algorithm/sorting_utils.c checker.c \
 		algorithm/sorting_utils2.c \
 
@@ -64,7 +64,7 @@ norm:
 	norminette libft ft_printf utils checker
 
 run:	all
-		@./push_swap 40 61 6 1 66 57 83 93 62 48 77 73 30 100 32 98 19 84 56 15 50 65 58 36 46 95 38 45 14 76 60 35 70 37 42 74 64 7 16 5 43 9 3 25 80 51 2 18 24 86 34 20 26 85 63 8 33 47 27 39 96 11 78 4 59 71 31 29 68 90 87 81 91 12 23 92 49 88 41 10 89 99 82 44 79 97 69 17 94 22 28 72 13 75 55 54 53 67 21 52
+		@./push_swap 31 32 2 5 37 10 13 49 42 35 20 29 24 17 47 36 50 48 28 4 43 19 7 11 18 8 26 25 45 39 33 15 3 30 1 40 6 14 41 21 46 9 27 34 44 38 12 23 22 16
 #50 3 10 7 40 80 27 1
 
 .PHONY: all clean fclean re norm
