@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 16:01:21 by tterribi          #+#    #+#             */
-/*   Updated: 2022/09/20 12:21:22 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/09/20 16:24:58 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void	duplicates_check(t_stack *stacks)
 		if (check > 1)
 			error(stacks);
 	}
+	free(tmp);
 }
 
 void	input_checker_wrapper(int argc, char**argv, t_stack *stacks)

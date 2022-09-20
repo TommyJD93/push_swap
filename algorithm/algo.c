@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 17:17:20 by tterribi          #+#    #+#             */
-/*   Updated: 2022/09/20 11:07:37 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/09/20 16:24:01 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	lis_flag(t_stack *stacks, int max)
 		i--;
 	}
 	stacks->lis = arr;
+	free(arr);
 }
 
 int	lis(t_stack *stacks)
