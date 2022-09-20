@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 16:01:21 by tterribi          #+#    #+#             */
-/*   Updated: 2022/09/16 17:16:53 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/09/20 12:21:22 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ void	input_checker(char **argv)
 				j++;
 				continue ;
 			}
-			if ((argv[i][j] < 48) || (argv[i][j] > 57))
+			if ((argv[i][j] < 48 || argv[i][j] > 57) && (argv[i][j] != 45)
+				&& (argv[i][j] != 43))
 			{
 				ft_printf("Error\n");
 				exit(0);

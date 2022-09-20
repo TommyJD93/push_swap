@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 16:54:12 by tterribi          #+#    #+#             */
-/*   Updated: 2022/09/20 11:08:39 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/09/20 12:22:00 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	*allocation_helper(int len, int init_val)
 	arr = (int *)malloc(sizeof(int *) * (len + 1));
 	if (!arr)
 	{
-		printf("Error\n");
+		ft_printf("Error\n");
 		exit (0);
 	}
 	i = -1;
@@ -40,6 +40,7 @@ void	terminate(t_stack *stacks)
 
 void	error(t_stack *stacks)
 {
+	ft_printf("Error\n");
 	free(stacks->stack_a);
 	free(stacks->stack_b);
 	free(stacks->lis);
