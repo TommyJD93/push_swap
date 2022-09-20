@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+         #
+#    By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/31 17:11:02 by tterribi          #+#    #+#              #
-#    Updated: 2022/02/09 12:22:30 by tterribi         ###   ########.fr        #
+#    Updated: 2022/09/20 10:40:56 by tterribi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,10 +43,10 @@ $(NAME): ${OBJS}
 all:	${NAME}
 
 clean:
-		${RM} ${OBJS}
+		@${RM} ${OBJS}
 
 fclean:	clean
-		${RM} ${NAME}
+		@${RM} ${NAME}
 
 re:		fclean all
 

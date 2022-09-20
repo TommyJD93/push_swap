@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 17:17:20 by tterribi          #+#    #+#             */
-/*   Updated: 2022/09/19 16:41:13 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/09/20 11:07:37 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,6 @@
 
 void	lis_flag(t_stack *stacks, int max)
 {
-	// since we need an array composed just by 0 and 1
-	// we'll need to take the LIS that we have right now
-	// for example (1 2 2 3 4 4 4 5 6 6 7 7) and choose wich
-	// element we will set to 0 and 1 to do so we'll create
-	// another array(a sort of workbench) that will be initialized
-	// at 0, at this point we''read the LIS backwards and each time
-	// that we'll find that LIS[i] is equal to max - j we'll put a 1
-	// in the other array at the same index. At this point we just
-	// need to overwrite the LIS with the new array
 	int	i;
 	int	j;
 	int	*arr;
@@ -46,11 +37,6 @@ void	lis_flag(t_stack *stacks, int max)
 
 int	lis(t_stack *stacks)
 {
-	// first of all we want to read the stack A from left to right
-	// and each time we see that an element is valid for an increasing
-	// sequence we'll increase the respective cell of the LIS by 1
-	/// in this way we'll obtain an array that should look something like this:
-	// 1 2 2 3 4 4 4 5 6 6 7 7
 	int	max;
 	int	i;
 	int	j;

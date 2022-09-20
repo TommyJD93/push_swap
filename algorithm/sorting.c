@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 17:08:51 by tterribi          #+#    #+#             */
-/*   Updated: 2022/09/19 17:47:10 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/09/20 11:06:27 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,39 +27,39 @@ void	move_flags(t_stack *stacks)
 	}
 }
 
-// void	solve_three(t_stack *stacks)
-// {
-// 	int	min;
+void	solve_three(t_stack *stacks)
+{
+	int	min;
 
-// 	min = find_min(stacks);
-// 	while (stacks->stack_a[0] != min)
-// 		ft_ra(stacks, 1);
-// 	ft_pb(stacks, 1);
-// 	min = find_min(stacks);
-// 	while (stacks->stack_a[0] != min)
-// 		ft_ra(stacks, 1);
-// 	ft_pa(stacks, 1);
-// }
+	min = find_min(stacks);
+	while (stacks->stack_a[0] != min)
+		rotate_a(stacks, 1);
+	push_b(stacks, 1);
+	min = find_min(stacks);
+	while (stacks->stack_a[0] != min)
+		rotate_a(stacks, 1);
+	push_a(stacks, 1);
+}
 
-// void	solve_five(t_stack *stacks)
-// {
-// 	int	tmp;
+void	solve_five(t_stack *stacks)
+{
+	int	tmp;
 
-// 	tmp = find_min(stacks);
-// 	while (stacks->stack_a[0] != tmp)
-// 		ft_ra(stacks, 1);
-// 	ft_pb(stacks, 1);
-// 	tmp = find_min(stacks);
-// 	while (stacks->stack_a[0] != tmp)
-// 		ft_ra(stacks, 1);
-// 	ft_pb(stacks, 1);
-// 	solve_three(stacks);
-// 	tmp = find_max(stacks->stack_b, 0);
-// 	while (stacks->stack_b[0] != tmp)
-// 		ft_rb(stacks, 1);
-// 	ft_pa(stacks, 1);
-// 	ft_pa(stacks, 1);
-// }
+	tmp = find_min(stacks);
+	while (stacks->stack_a[0] != tmp)
+		rotate_a(stacks, 1);
+	push_b(stacks, 1);
+	tmp = find_min(stacks);
+	while (stacks->stack_a[0] != tmp)
+		rotate_a(stacks, 1);
+	push_b(stacks, 1);
+	solve_three(stacks);
+	tmp = find_max(stacks->stack_b, 0);
+	while (stacks->stack_b[0] != tmp)
+		rotate_b(stacks, 1);
+	push_a(stacks, 1);
+	push_a(stacks, 1);
+}
 
 void	algo_helper(t_stack *stacks)
 {
@@ -71,21 +71,21 @@ void	algo_helper(t_stack *stacks)
 	if (cases(stacks, i) == 1)
 	{
 		if (i <= j)
-			rab_ra(stacks, i, j);
+			case_one_a(stacks, i, j);
 		else
-			rab_rb(stacks, i, j);
+			case_one_b(stacks, i, j);
 	}
 	else if (cases(stacks, i) == 4)
 	{
-		if ((stacks->len_b- i) < (stacks->len_a - j))
-			rrab_rra(stacks, i, j);
+		if ((stacks->len_b - i) < (stacks->len_a - j))
+			case_four_a(stacks, i, j);
 		else
-			rrab_rrb(stacks, i, j);
+			case_four_b(stacks, i, j);
 	}
 	else if (cases(stacks, i) == 2)
-		ra_rrb(stacks, i, j);
+		case_two_a(stacks, i, j);
 	else
-		rb_rra(stacks, i, j);
+		case_two_b(stacks, i, j);
 	push_a(stacks, 1);
 }
 

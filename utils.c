@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 16:54:12 by tterribi          #+#    #+#             */
-/*   Updated: 2022/09/19 08:28:03 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/09/20 11:08:39 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,10 @@ int	find_min(t_stack *stacks)
 	return (min);
 }
 
-int find_max(int *arr, int len)
+int	find_max(int *arr, int len)
 {
-	int max;
-	int i;
+	int	max;
+	int	i;
 
 	i = -1;
 	max = arr[0];

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_mat_col.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 09:09:44 by tterribi          #+#    #+#             */
-/*   Updated: 2022/07/18 19:54:04 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/09/20 11:04:55 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ int	ft_mat_col(int *str)
 	count = 0;
 	while (str[count])
 		count++;
-	return (count-1);
+	return (count - 1);
 }

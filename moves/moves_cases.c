@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_combo.c                                  :+:      :+:    :+:   */
+/*   moves_cases.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:25:25 by ffrau             #+#    #+#             */
-/*   Updated: 2022/09/19 17:37:22 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/09/20 11:01:46 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ra_rrb(t_stack *stack, int i, int j)
+void	case_two_a(t_stack *stack, int i, int j)
 {
 	while (j > 0)
 	{
@@ -26,7 +26,7 @@ void	ra_rrb(t_stack *stack, int i, int j)
 	}
 }
 
-void	rb_rra(t_stack *stack, int i, int j)
+void	case_two_b(t_stack *stack, int i, int j)
 {
 	while (i > 0)
 	{
@@ -40,7 +40,7 @@ void	rb_rra(t_stack *stack, int i, int j)
 	}
 }
 
-void	rab_ra(t_stack *stack, int i, int j) //1
+void	case_one_a(t_stack *stack, int i, int j)
 {
 	while (i > 0)
 	{
@@ -55,7 +55,7 @@ void	rab_ra(t_stack *stack, int i, int j) //1
 	}
 }
 
-void	rab_rb(t_stack *stack, int i, int j) //2
+void	case_one_b(t_stack *stack, int i, int j)
 {
 	while (j > 0)
 	{
@@ -70,7 +70,7 @@ void	rab_rb(t_stack *stack, int i, int j) //2
 	}
 }
 
-void	rrab_rra(t_stack *stack, int i, int j) //3rrab_rra
+void	case_four_a(t_stack *stack, int i, int j)
 {
 	while (stack->len_b - i > 0)
 	{

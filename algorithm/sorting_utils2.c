@@ -6,7 +6,7 @@
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 23:07:49 by marvin            #+#    #+#             */
-/*   Updated: 2022/09/19 17:47:38 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/09/20 11:06:13 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,29 +23,12 @@ int	find_next_elem(t_stack *stacks, int i)
 	j = -1;
 	while (++j < stacks->len_a)
 	{
-		if (stacks->stack_b[i] > stacks->stack_a[j] &&
-			stacks->stack_b[i] < stacks->stack_a[j + 1])
+		if (stacks->stack_b[i] > stacks->stack_a[j]
+			&& stacks->stack_b[i] < stacks->stack_a[j + 1])
 			return (j + 1);
 	}
 	return (0);
 }
-
-// int	find_next_elem(t_stack *stacks, int i)
-// {
-// 	int	next;
-// 	int	j;
-
-// 	j = -1;
-// 	next = find_max(stacks->stack_a, stacks->len_a);
-// 	while (++j < stacks->len_a)
-// 	{
-// 		if (stacks->stack_a[j] > stacks->stack_b[i] && stacks->stack_a[j] < next)
-// 			next = stacks->stack_a[j];
-// 	}
-// 	if (next == find_max(stacks->stack_a, stacks->len_a))
-// 		return (find_pos_max(stacks));
-// 	return (next);
-// }
 
 int	cases(t_stack *stacks, int i)
 {
@@ -73,7 +56,7 @@ int	num_to_move(t_stack *stacks)
 	int	j;
 	int	index;
 	int	moves;
-	int max_moves;
+	int	max_moves;
 
 	i = 0;
 	index = 0;
@@ -94,15 +77,14 @@ int	num_to_move(t_stack *stacks)
 
 void	order_manager(t_stack *stacks)
 {
-	int min;
+	int	min;
 
 	min = find_min(stacks);
 	while (stacks->stack_a[0] != min)
 	{
-		if (find_pos_min(stacks) <=  (stacks->len_a / 2))
+		if (find_pos_min(stacks) <= (stacks->len_a / 2))
 			rotate_a(stacks, 1);
 		else
 			reverse_rotate_a(stacks, 1);
 	}
 }
-

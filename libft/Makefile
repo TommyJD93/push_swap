@@ -6,7 +6,7 @@
 #    By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 16:47:16 by tterribi          #+#    #+#              #
-#    Updated: 2022/01/24 16:47:18 by tterribi         ###   ########.fr        #
+#    Updated: 2022/09/20 10:41:06 by tterribi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,9 +43,9 @@ bonus:	${OBJSBONUS}
 all:	${NAME}
 
 clean:
-		${RM} ${OBJS} ${OBJSBONUS}
+		@${RM} ${OBJS} ${OBJSBONUS}
 
 fclean:	clean
-		${RM} ${NAME}
+		@${RM} ${NAME}
 
 re:		fclean all

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_ab.c                                     :+:      :+:    :+:   */
+/*   moves_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 20:36:59 by ffrau             #+#    #+#             */
-/*   Updated: 2022/09/19 17:40:44 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/09/20 11:01:04 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	swap_ab(t_stack *stack, int can_write)
 		ft_printf("ss\n");
 }
 
-void	rrab_rrb(t_stack *stack, int i, int j)
+void	case_four_b(t_stack *stack, int i, int j)
 {
 	while (stack->len_a - j > 0)
 	{

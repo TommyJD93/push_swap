@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_mat_row.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tterribi <tterribi@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: tterribi <tterribi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 19:40:17 by tterribi          #+#    #+#             */
-/*   Updated: 2022/07/18 19:54:08 by tterribi         ###   ########.fr       */
+/*   Updated: 2022/09/20 11:05:16 by tterribi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ int	ft_mat_row(int **matrix)
 			x++;
 		y++;
 	}
-	return (y-1);
+	return (y - 1);
 }
